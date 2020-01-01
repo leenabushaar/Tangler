@@ -20,9 +20,20 @@
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
+
     <style>
-    .btn-primary{
-      background-color: red;
+       .btn-primary{
+      background-color: transparent;
+      color:#5f9eadbf;
+      border-color: #5f9eadbf;
+    }
+        
+
+    .btn-primary:hover{
+      background-color: #5f9eadbf;
+      color:white;
+      border-color: #5f9eadbf;
+
     }
     </style>
   </head>
@@ -63,9 +74,9 @@
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li><a href="index.html" class="nav-link">Home</a></li>
+                  <li class="active"><a href="index.html" class="nav-link">Home</a></li>
                   <li><a href="chat.html" class="nav-link">Chat</a></li>
-                  <li class="active"><a href="search.html" class="nav-link">Search Users</a></li>
+                  <li><a href="search.html" class="nav-link">Search Users</a></li>
                   <li><a href="report.html" class="nav-link">Report A Problem</a></li>
                 </ul>
               </nav>
@@ -96,6 +107,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-8">
+
             <h2 class="h4 mb-8">How It Works</h2>
             <div> <!--Add icon-->
               <p>Student email is used to create a Tangler account.</p>
