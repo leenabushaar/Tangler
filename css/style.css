@@ -232,7 +232,8 @@ a {
 h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
   font-weight: 300;
-  color: #000; }
+  color: #000;
+  margin-bottom: 25px; }
 
 .border-2 {
   border-width: 2px; }
@@ -1819,3 +1820,7 @@ h1, h2, h3, h4, h5,
 .person-pic-39219 img {
   border-radius: 50%;
   width: 70px; }
+
+  div p{
+    margin-bottom: 15px;
+  }
