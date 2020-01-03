@@ -21,6 +21,8 @@
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+
+
     <style>
       .btn-primary{
      background-color: transparent;
@@ -119,30 +121,30 @@
 
         <div class="row">
           <div class="col-lg-8 mb-5" >
-            <form action="#" method="post">
+            <form action="sendemail.php" method="post" >
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
-                  <input type="text" class="form-control" placeholder="First name">
+                  <input type="text" class="form-control" placeholder="First name" name="Firstntosendemail" required>
                 </div>
                 <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="First name">
+                  <input type="text" class="form-control" placeholder="Last name" name="Lastntosendemail" required>
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <input type="text" class="form-control" placeholder="Email address">
+                  <input type="email" class="form-control" placeholder="Email address" name="Emailsend" required>
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <textarea name="" id="" class="form-control" placeholder="Write your message." cols="30" rows="10"></textarea>
+                  <textarea  id=" texttoemail" class="form-control" placeholder="Write your message." cols="30" rows="10" name="texttosendemail" required></textarea>
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-md-6 mr-auto">
-                  <input type="submit" class="btn btn-block btn-primary py-3 px-5" value="Send Message">
+                  <input type="submit"  name="sendemailbutton" class="btn btn-block btn-primary py-3 px-5" value="Send Message">
                 </div>
               </div>
             </form>
@@ -164,6 +166,8 @@
       </div>
     </div> <!-- END .site-section -->
 
+
+  
 
 
     <footer class="site-footer">
