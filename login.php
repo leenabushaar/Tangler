@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
 
   <head>
@@ -116,8 +115,25 @@
   clear: both;
 }
 
-a#createAccLink{
+#createAccLink{
   color: white;
+  /*border:1px solid white;*/
+  padding: 5px;
+  border-radius:15px;
+}
+#createAccLink:hover{
+  background-color: white;
+  color:black;
+  border-color: #5f9eadbf;
+
+}
+#createAccLink:active{
+
+  background-color: #3d6f7be6 !important;
+  color:black !important;
+  border-color: #3d6f7be6 !important;
+  box-shadow: 1px 1px 1px 1px #3d6f7be6 !important;
+
 }
 
     </style>
@@ -147,7 +163,7 @@ a#createAccLink{
 
             <div class="col-5">
               <div class="site-logo">
-                <a href="index.html" class="font-weight-bold">Tangler.</a>
+                <a href="index.php" class="font-weight-bold">Tangler.</a>
               </div>
             </div>
 
@@ -163,7 +179,7 @@ a#createAccLink{
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li><a href="index.html" class="nav-link">Home</a></li>
+                  <li><a href="index.php" class="nav-link">Home</a></li>
                   <li><a href="chat.html" class="nav-link">Chat</a></li>
                   <li><a href="search.html" class="nav-link">Search Users</a></li>
                   <li><a href="report.html" class="nav-link">Report A Problem</a></li>
@@ -187,26 +203,26 @@ a#createAccLink{
                 <h3 class="text-white" style="text-align: left">Log In</h3>
             <!--  </div>
               <div class="col-md-7 text center" id="login-form">
-            --><form action="" method="post">
+            --><form action="includes/login.inc.php" method="POST">
                 <table cellpadding="10px" style="text-align: center">
                   <tr>
                     <td class="text-white">Student E-mail:</td>
-                    <td><input type="text"/></td>
+                    <td><input type="text" name="uemail" value="@std.psut.edu.jo"/></td>
                   </tr>
                   <tr>
                     <td class="text-white">Password:</td>
-                    <td><input type="password"/></td>
+                    <td><input type="password" name="upass"/></td>
                   </tr>
                   <tr>
                     <td colspan="2">
-                      <p><a href="chat.html" class="btn btn-primary btn-outline-white py-3 px-5">Log In</a></p>
+                      <button type="submit" name="login-submit" class="btn btn-primary btn-outline-white py-3 px-5">Log In</button>
                     </td>
                   </tr>
                   <tr>
                     <td>
                     </td>
                     <td>
-                      <p><a id="createAccLink" href="newaccount.html"/>New to Tangler? Create An Account.</a><p>
+                      <p><a id="createAccLink" href="signup.php"/>New to Tangler? Create An Account.</a><p>
                     </td>
                   </tr>
                 </table>

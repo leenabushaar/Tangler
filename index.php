@@ -91,7 +91,7 @@
     font-style: oblique;
   }
 
-  #login-button{
+  .log-button{
     border: none;
     margin-right: 0px;
     width: auto;
@@ -124,13 +124,18 @@
 
             <div class="col-5">
               <div class="site-logo">
-                <a href="index.html" class="font-weight-bold">Tangler.</a>
+                <a href="index.php" class="font-weight-bold">Tangler.</a>
               </div>
             </div>
 
             <div class="col-5" style="padding-right: 25px">
               <div style="text-align:right">
-                <p><a href="login.html" class="btn btn-primary btn-outline-white py-3 px-5" id="login-button">Log In</a></p>
+                <p><a href="login.php" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="loginbtn">Log In</a></p>
+
+                <form action="includes.logout.inc.php" method="POST">
+                  <button type="submit" name="logout-submit" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="logoutbtn">Log Out</button>
+                </form>
+
               </div>
             </div>
 
@@ -140,7 +145,7 @@
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li class="active"><a href="index.html" class="nav-link">Home</a></li>
+                  <li class="active"><a href="index.php" class="nav-link">Home</a></li>
                   <li><a href="chat.html" class="nav-link">Chat</a></li>
                   <li><a href="search.html" class="nav-link">Search Users</a></li>
                   <li><a href="report.html" class="nav-link">Report A Problem</a></li>
@@ -272,7 +277,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="item web">
               <!--<a href="" class="item-wrap" data-fancybox="gal" data-width="330" data-height="230">-->
-                <span class="icon-add"></span>
+                <!-- <span class="icon-add"></span>-->
 
                 <!--<img class="img-fluid" src="">-->
               </a>
@@ -282,7 +287,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="item web">
               <a href="images/psut.jpg" class="item-wrap" data-fancybox="gal" data-width="330" data-height="230">
-                <span class="icon-add"></span>
+               <!-- <span class="icon-add"></span>-->
 
                 <img class="img-fluid img-thumbnail uniImages" src="images/psut.jpg">
 
@@ -293,7 +298,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="item web">
              <!-- <a href="" class="item-wrap" data-fancybox="gal" data-width="330" data-height="230">-->
-                <span class="icon-add"></span>
+                <!-- <span class="icon-add"></span>-->
                 <!--<img class="img-fluid" src="">-->
               </a>
             </div>
