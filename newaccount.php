@@ -204,26 +204,26 @@
                 <h3 class="text-white" style="text-align: left">Log In</h3>
             <!--  </div>
               <div class="col-md-7 text center" id="login-form">
-            --><form action="includes/login.inc.php" method="POST">
+            --><form action="" method="post">
                 <table cellpadding="10px" style="text-align: center">
                   <tr>
                     <td class="text-white">Student E-mail:</td>
-                    <td><input type="text" name="uemail" value="@std.psut.edu.jo"/></td>
+                    <td><input type="text"/></td>
                   </tr>
                   <tr>
                     <td class="text-white">Password:</td>
-                    <td><input type="password" name="upass"/></td>
+                    <td><input type="password"/></td>
                   </tr>
                   <tr>
                     <td colspan="2">
-                      <button type="submit" name="login-submit" class="btn btn-primary btn-outline-white py-3 px-5">Log In</button>
+                      <p><a href="chat.html" class="btn btn-primary btn-outline-white py-3 px-5">Log In</a></p>
                     </td>
                   </tr>
                   <tr>
                     <td>
                     </td>
                     <td>
-                      <p><a id="createAccLink" href="singup.php"/>New to Tangler? Create An Account.</a><p>
+                      <p><a id="createAccLink" href="newaccount.php"/>New to Tangler? Create An Account.</a><p>
                     </td>
                   </tr>
                 </table>

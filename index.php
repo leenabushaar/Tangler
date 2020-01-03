@@ -91,7 +91,7 @@
     font-style: oblique;
   }
 
-  #login-button{
+  .log-button{
     border: none;
     margin-right: 0px;
     width: auto;
@@ -130,7 +130,12 @@
 
             <div class="col-5" style="padding-right: 25px">
               <div style="text-align:right">
-                <p><a href="login.html" class="btn btn-primary btn-outline-white py-3 px-5" id="login-button">Log In</a></p>
+                <p><a href="login.php" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="loginbtn">Log In</a></p>
+
+                <form action="includes.logout.inc.php" method="POST">
+                  <button type="submit" name="logout-submit" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="logoutbtn">Log Out</button>
+                </form>
+
               </div>
             </div>
 
