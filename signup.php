@@ -206,6 +206,14 @@
             --><form action="includes/signup.inc.php" method="POST">
                 <table cellpadding="10px" style="text-align: center">
                   <tr>
+                    <td class="text-white">First Name:</td>
+                    <td><input type="text" name="ufname"/></td>
+                  </tr>
+                  <tr>
+                    <td class="text-white">Last Name:</td>
+                    <td><input type="text" name="ulname"/></td>
+                  </tr>
+                  <tr>
                     <td class="text-white">Student E-mail:</td>
                     <td><input type="text" name="uemail" value="@std.psut.edu.jo"/></td>
                   </tr>
@@ -220,13 +228,6 @@
                   <tr>
                     <td colspan="2">
                       <button type="submit" name="signup-submit" class="btn btn-primary btn-outline-white py-3 px-5">Sign Up</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                    </td>
-                    <td>
-                      <p><a id="createAccLink" href="singup.php"/>New to Tangler? Create An Account.</a><p>
                     </td>
                   </tr>
                 </table>
