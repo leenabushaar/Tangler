@@ -163,9 +163,7 @@
 
             <div class="col-5">
               <div class="site-logo">
-                
                 <a href="index.php" class="font-weight-bold">Tangler.</a>
-
               </div>
             </div>
 
@@ -181,9 +179,7 @@
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-
                   <li><a href="index.php" class="nav-link">Home</a></li>
-
                   <li><a href="chat.html" class="nav-link">Chat</a></li>
                   <li><a href="search.html" class="nav-link">Search Users</a></li>
                   <li><a href="report.html" class="nav-link">Report A Problem</a></li>
@@ -204,10 +200,10 @@
             <div class="col-md-7 text-center" id="login-title">
 
               <span class="text-white" style="float: none; margin: 0 auto; text-align: center">
-                <h3 class="text-white" style="text-align: left">Log In</h3>
+                <h3 class="text-white" style="text-align: left">Sign Up</h3>
             <!--  </div>
               <div class="col-md-7 text center" id="login-form">
-            --><form action="includes/login.inc.php" method="POST">
+            --><form action="includes/signup.inc.php" method="POST">
                 <table cellpadding="10px" style="text-align: center">
                   <tr>
                     <td class="text-white">Student E-mail:</td>
@@ -218,17 +214,19 @@
                     <td><input type="password" name="upass"/></td>
                   </tr>
                   <tr>
+                    <td class="text-white">Repeat Password:</td>
+                    <td><input type="password" name="repeatpass"/></td>
+                  </tr>
+                  <tr>
                     <td colspan="2">
-                      <button type="submit" name="login-submit" class="btn btn-primary btn-outline-white py-3 px-5">Log In</button>
+                      <button type="submit" name="signup-submit" class="btn btn-primary btn-outline-white py-3 px-5">Sign Up</button>
                     </td>
                   </tr>
                   <tr>
                     <td>
                     </td>
                     <td>
-
-                      <p><a id="createAccLink" href="signup.php"/>New to Tangler? Create An Account.</a><p>
-
+                      <p><a id="createAccLink" href="singup.php"/>New to Tangler? Create An Account.</a><p>
                     </td>
                   </tr>
                 </table>
