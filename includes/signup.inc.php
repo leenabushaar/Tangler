@@ -1,4 +1,4 @@
-<link
+
 <?php
 
 if (isset($_POST['signup-submit'])){
@@ -30,8 +30,6 @@ if (isset($_POST['signup-submit'])){
   }
 
   elseif (!preg_match("/^[a-zA-Z]*$/",$firstName)) {
-    $fnameErr = "First name can only contain letters.";
-    //displayError($fnameErr);
     header("Location: ../signup.php?error=invalidfirstname");
     exit();
   }
@@ -44,7 +42,7 @@ if (isset($_POST['signup-submit'])){
   }
 
   elseif ($password!==$passwordRepeat){
-    header("Location: ../signup.php?error=passwordCheck&ufname=".$firstName."&ulname=".$lastName."&uemail=".$email);
+    header("Location: ../signup.php?error=passwordcheck&ufname=".$firstName."&ulname=".$lastName."&uemail=".$email);
     exit();
   }
 

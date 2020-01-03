@@ -203,7 +203,42 @@
                 <h3 class="text-white" style="text-align: left">Sign Up</h3>
             <!--  </div>
               <div class="col-md-7 text center" id="login-form">
-            --><form action="includes/signup.inc.php" method="POST">
+            -->
+
+            <?php
+              if(isset($_GET['error'])){
+
+                if($_GET['error']=="emptyfields"){
+                  echo '<p class="signuperror">Fill in all fields!</p>';
+                }
+
+                elseif($_GET['error']=="invalidemail"){
+                  echo '<p class="signuperror">Invalid student email.</p>';
+                }
+
+                elseif($_GET['error']=="invalidfirstname"){
+                  echo '<p class="signuperror">First name should only include letters.</p>';
+                }
+
+                elseif($_GET['error']=="invalidlastname"){
+                  echo '<p class="signuperror">Last name should only include letters and spaces.</p>';
+                }
+
+                elseif($_GET['error']=="passwordchecl"){
+                  echo '<p class="signuperror">Your passwords do not match.</p>';
+                }
+
+                elseif($_GET['error']=="emailexistsalready"){
+                  echo '<p class="signuperror">Account for this email exists already.</p>';
+                }
+              }
+
+              else if($_GET['signup']=="success"){
+                echo '<p class="signupsuccess">Sign up successful.</p>';
+              }
+              ?>
+
+              <form action="includes/signup.inc.php" method="POST">
                 <table cellpadding="10px" style="text-align: center">
                   <tr>
                     <td class="text-white">First Name:</td>
