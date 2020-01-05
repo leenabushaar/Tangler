@@ -89,6 +89,17 @@ $result="";
       border-color: #3d6f7be6 !important;
       box-shadow: 1px 1px 1px 1px #3d6f7be6 !important;
     }
+
+
+
+
+
+    
+  .log-button{
+    border: none;
+    margin-right: 0px;
+    width: auto;
+  }
    </style>
 
   </head>
@@ -114,24 +125,33 @@ $result="";
         <div class="container">
           <div class="row align-items-center position-relative">
 
-            <div class="col-3 ">
+            <div class="col-5">
               <div class="site-logo">
-                <a href="index.html" class="font-weight-bold">Tangler.</a>
+                <a href="index.php" class="font-weight-bold">Tangler.</a>
               </div>
             </div>
 
-            <div class="col-9  text-right">
+            <div class="col-5" style="padding-right: 25px">
+              <div style="text-align:right">
+                
+                <p><a href="login.php" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="loginbtn">Log In</a></p>
 
+                <form action="includes.logout.inc.php" method="POST">
+                  <button type="submit" name="logout-submit" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="logoutbtn">Log Out</button>
+                </form>
+
+              </div>
+            </div>
+
+            <div class="col-2  text-right">
 
               <span class="d-inline-block d-lg-block"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
 
-
-
               <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li><a href="index.html" class="nav-link">Home</a></li>
-                  <li><a href="chat.html" class="nav-link">Chat</a></li>
-                  <li ><a href="search.html" class="nav-link">Search Users</a></li>
+                  <li ><a href="index.php" class="nav-link">Home</a></li>
+                  <li><a href="chat.php" class="nav-link">Chat</a></li>
+                  <li><a href="search.php" class="nav-link">Search Users</a></li>
                   <li class="active"><a href="report.php" class="nav-link">Report A Problem</a></li>
                 </ul>
               </nav>
