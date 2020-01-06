@@ -240,10 +240,6 @@ if(isset($_SESSION['userId'])){
                   echo '<p class="signuperror">Account for this email exists already.</p>';
                 }
               }
-
-              else if($_GET['signup']=="success"){
-                echo '<p class="signupsuccess">Sign up successful.</p>';
-              }
               ?>
 
               <form action="includes/signup.inc.php" method="POST">
