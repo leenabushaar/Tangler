@@ -17,7 +17,7 @@ if (isset($_POST['signup-submit'])){
   }
 
   elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-    header("Location: ../signup.php?error=invalidemail");
+    header("Location: ../signup.php?error=invalidemail&ufname=".$firstName."&ulname=".$lastName."&uemail=".$email);
     exit();
   }
 
@@ -25,19 +25,19 @@ if (isset($_POST['signup-submit'])){
   elseif (!preg_match("/^[a-zA-Z]{3}\d{8}@std\.psut\.edu\.jo$/",$email)) {
     $emailErr = "This must be a valid student email.";
     //displayError($emailErr);
-    header("Location: ../signup.php?error=invalidemail");
+    header("Location: ../signup.php?error=invalidemail&ufname=".$firstName."&ulname=".$lastName."&uemail=".$email);
     exit();
   }
 
   elseif (!preg_match("/^[a-zA-Z]*$/",$firstName)) {
-    header("Location: ../signup.php?error=invalidfirstname");
+    header("Location: ../signup.php?error=invalidfirstname&ufname=".$firstName."&ulname=".$lastName."&uemail=".$email);
     exit();
   }
 
   elseif (!preg_match("/^[a-z A-Z]*$/",$lastName)) {
     $lnameErr = "Last name can only contain letters and spaces.";
     //displayError($lnameErr);
-    header("Location: ../signup.php?error=invalidlastname");
+    header("Location: ../signup.php?error=invalidlastname&ufname=".$firstName."&ulname=".$lastName."&uemail=".$email);
     exit();
   }
 
@@ -58,13 +58,13 @@ if (isset($_POST['signup-submit'])){
 
     else {
 
-        mysqli_stmt_bind_param($stmt, "s", $firstName);
+        mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_store_result($stmt);
         $resultCheck=mysqli_stmt_num_rows($stmt);
 
         if($resultCheck>0){
-          header("Location: ../signup.php?error=emailexistsalready&ufname=".$firstName."&ulname=".$lastName);
+          header("Location: ../signup.php?error=emailexistsalready&ufname=".$firstName."&ulname=".$lastName."&uemail=".$email);
           exit();
         }
 

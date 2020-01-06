@@ -36,7 +36,7 @@ if (isset($_POST['login-submit'])){
           $_SESSION['userFname']= $row['fnameUsers'];
           $_SESSION['userLname']= $row['lnameUsers'];
 
-          header("Location: ../login.php?login=success");
+          header("Location: ../index.php?login=success");
           exit();
         }
         else{

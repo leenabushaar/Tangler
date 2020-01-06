@@ -163,7 +163,7 @@
 
             <div class="col-5">
               <div class="site-logo">
-                <a href="index.html" class="font-weight-bold">Tangler.</a>
+                <a href="index.php" class="font-weight-bold">Tangler.</a>
               </div>
             </div>
 
@@ -179,7 +179,7 @@
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li><a href="index.html" class="nav-link">Home</a></li>
+                  <li><a href="index.php" class="nav-link">Home</a></li>
                   <li><a href="chat.html" class="nav-link">Chat</a></li>
                   <li><a href="search.html" class="nav-link">Search Users</a></li>
                   <li><a href="report.html" class="nav-link">Report A Problem</a></li>
@@ -224,7 +224,7 @@
                   echo '<p class="signuperror">Last name should only include letters and spaces.</p>';
                 }
 
-                elseif($_GET['error']=="passwordchecl"){
+                elseif($_GET['error']=="passwordcheck"){
                   echo '<p class="signuperror">Your passwords do not match.</p>';
                 }
 
@@ -242,23 +242,23 @@
                 <table cellpadding="10px" style="text-align: center">
                   <tr>
                     <td class="text-white">First Name:</td>
-                    <td><input type="text" name="ufname"/></td>
+                    <td><input type="text" name="ufname" id="fname" value="<?php if(isset($_GET['ufname'])) echo $_GET['ufname'];?>"/></td>
                   </tr>
                   <tr>
                     <td class="text-white">Last Name:</td>
-                    <td><input type="text" name="ulname"/></td>
+                    <td><input type="text" name="ulname" id="lname" value="<?php if(isset($_GET['ulname'])) echo $_GET['ulname'];?>"/></td>
                   </tr>
                   <tr>
                     <td class="text-white">Student E-mail:</td>
-                    <td><input type="text" name="uemail" value="@std.psut.edu.jo"/></td>
+                    <td><input type="text" name="uemail" id="email" value="<?php if(isset($_GET['uemail'])) echo $_GET['uemail']; else echo "@std.psut.edu.jo";?>"/></td>
                   </tr>
                   <tr>
                     <td class="text-white">Password:</td>
-                    <td><input type="password" name="upass"/></td>
+                    <td><input type="password" name="upass" id="pass"/></td>
                   </tr>
                   <tr>
                     <td class="text-white">Repeat Password:</td>
-                    <td><input type="password" name="repeatpass"/></td>
+                    <td><input type="password" name="repeatpass" id="rpass"/></td>
                   </tr>
                   <tr>
                     <td colspan="2">

@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION['userId'])){
+    header("Location: index.php");
+    die();
+}
+?>
+
 <html lang="en">
 
   <head>
@@ -164,7 +172,7 @@
             <div class="col-5">
               <div class="site-logo">
 
-                <a href="index.html" class="font-weight-bold">Tangler.</a>
+                <a href="index.php" class="font-weight-bold">Tangler.</a>
 
               </div>
             </div>
@@ -182,7 +190,7 @@
               <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
 
-                  <li><a href="index.html" class="nav-link">Home</a></li>
+                  <li><a href="index.php" class="nav-link">Home</a></li>
 
                   <li><a href="chat.html" class="nav-link">Chat</a></li>
                   <li><a href="search.html" class="nav-link">Search Users</a></li>
