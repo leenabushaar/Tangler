@@ -5,7 +5,6 @@
      die();
  }
 ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -31,6 +30,12 @@
 
 
     <style>
+
+    .page-form{
+
+      position: absolute;
+      top:40%;
+    }
       .btn-primary{
      background-color: transparent;
      color:#5f9eadbf;
@@ -61,6 +66,12 @@
     margin-right: 0px;
     width: auto;
   }
+
+  table{
+    color: white;
+    text-align: left;
+  }
+
    </style>
   </head>
 
@@ -131,18 +142,85 @@
 
 
       </div>
+      <div class="row align-items-center position-relative">
+
+        <div class="col-5">
+          <div class="site-logo">
+            <p style="color: white">Your Profile</p>
+          </div>
+        </div>
+
     </div>
 
   </header>
 
+
   <div class="ftco-blocks-cover-1">
       <div class="site-section-cover overlay" style="background-image: url('images/hero_1.jpg')">
         <div class="container">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-md-7 text-center">
-              <h1 class="mb-4 text-white">Your Profile</h1>
-              <p class="mb-4">Soon to be developed.</p>
-            </div>
+                <div class="row align-items-center position-relative justify-content-center">
+                  <div class="col-md-7 page-form">
+                <form action="includes/editprofile.inc.php" method="POST">
+                  <table cellpadding="10px" style="text-align: center">
+                    <tr>
+                      <td>First Name:</td>
+                      <td><input type="text" size="37" name="p-fname" id="p-fname"/></td>
+                    </tr>
+                    <tr>
+                      <td>Last Name:</td>
+                      <td><input type="text" size="37" name="p-lname" id="p-lname"/></td>
+                    </tr>
+                    <tr>
+                      <td>University:</td>
+                      <td><input type="text" size="37" name="p-uni" id="p-uni" value="Princess Sumaya University for Technology" readonly/></td>
+                    </tr>
+                      <tr>
+                        <td>Status:</td>
+                        <td style="text-align:left">
+                          <label><input class="text-white" type="radio" name="status" value="undergrad" checked onchange()="handleChange()"/> Undergraduate</label><br>
+                          <label><input type="radio" name="status" value="grad" onchange()="handleChange()"/> Graduate</label><br>
+                          <label><input type="radio" name="status" value="alumni" onchange()="handleChange()"/> Alumnus</label>
+                        </td>
+                      </tr>
+                      <tr>
+                      <td id="studyTitle">Major:</td>
+                      <td id="studyOptions" style="text-align:left">
+
+                      <select>
+                        <option value="" readonly>Please Choose Major</option>
+                        <optgroup label="King Hussein School of Computing Sciences">
+                          <option value="cs">Computer Science</option>
+                          <option value="cg">Computer Graphics and Animation</option>
+                          <option value="se">Software Engineering</option>
+                        </optgroup>
+                        <optgroup label="King Abdullah II School of Engineering">
+                          <option value="ee">Electronics Engineering</option>
+                          <option value="ce">Computer Engineering</option>
+                          <option value="come">Communications Engineering</option>
+                          <option value="epee">Electrical Power and Energy Engineering</option>
+                          <option value="nise">Networks and Information Security Engineering</option>
+                        </optgroup>
+                        <optgroup label="King Talal School of Business Technology">
+                          <option value="ba">Business Administration</option>
+                          <option value="acc">Accounting</option>
+                          <option value="em">E-Marketing and Social Media</option>
+                          <option value="bit">Business Information Technology</option>
+                        </optgroup>
+                      </select>
+
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td colspan="2">
+                        <button type="submit" name="profile-submit" class="btn btn-primary btn-outline-white py-3 px-5">Sign Up</button>
+                      </td>
+                    </tr>
+
+                  </table>
+                </form>
+                </div>
+              </div>
           </div>
         </div>
       </div>
@@ -274,7 +352,7 @@
       </div>
     </div>
 -->
-
+<!--
 <footer class="site-footer">
   <div class="container">
     <div class="row">
@@ -315,10 +393,10 @@
       <div class="col-md-12">
         <div class="border-top pt-5">
           <p>
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        </p>
+      -->  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    <!--    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+    -->  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      <!--  </p>
         <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
         </div>
       </div>
@@ -326,7 +404,7 @@
     </div>
   </div>
 </footer>
-
+-->
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
