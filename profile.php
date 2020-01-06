@@ -56,10 +56,9 @@
       box-shadow: 1px 1px 1px 1px #3d6f7be6 !important;
     }
 
-
-
-
-
+  body{
+    background-color: grey;
+  }
 
   .log-button{
     border: none;
@@ -67,12 +66,50 @@
     width: auto;
   }
 
-  table{
+  table td{
     color: white;
     text-align: left;
   }
 
    </style>
+
+   <script>
+
+      function handleChange(){
+
+        statusArr=document.getElementsByName('status[]');
+        title=document.getElementById('studyTitle');
+        options=document.getElementById('studyOptions');
+
+
+        if(statusArr[0].checked){
+          title.innerHTML="Major:";
+          options.innerHTML="<option value=\"\" readonly>Please Choose Major</option><optgroup label=\"King Hussein School of Computing Sciences\"><option value=\"cs\">Computer Science</option><option value=\"cg\">Computer Graphics and Animation</option><option value=\"se\">Software Engineering</option></optgroup><optgroup label=\"King Abdullah II School of Engineering\"><option value=\"ee\">Electronics Engineering</option><option value=\"ce\">Computer Engineering</option><option value=\"come\">Communications Engineering</option><option value=\"epee\">Electrical Power and Energy Engineering</option><option value=\"nise\">Networks and Information Security Engineering</option></optgroup><optgroup label=\"King Talal School of Business Technology\"><option value=\"ba\">Business Administration</option><option value=\"acc\">Accounting</option><option value=\"em\">E-Marketing and Social Media</option><option value=\"bit\">Business Information Technology</option></optgroup>";
+          document.getElementById('year-row').style.display='block';
+        }
+
+        else if(statusArr[1].checked){
+          title.innerHTML="Program:";
+          options.innerHTML="<option value=\"\" readonly>Please Choose Program</option><optgroup label=\"King Abdullah I School of Graduate Studies and Scientific Research\"><option value=\"mcs\">Computer Science</option><option value=\"mds\">Data Science</option><option value=\"mitsdc\">IT Security and Digital Criminology</option><option value=\"misce\">Intelligent Systems and Computer Engineering</option><option value=\"mee\">Electrical Engineering</option><option value=\"mese\">Enterprise Systems Engineering</option><option value=\"mem\">Engineering Management</option><option value=\"mba\">Business Analytics</option><option value=\"mbe\">Business Entrepreneurship</option></optgroup>";
+          document.getElementById('year-row').style.display='none';
+        }
+
+        else if(statusArr[2].checked){
+          title.innerHTML="Degree:";
+          options.innerHTML="<option value=\"\" readonly>Please Choose Degree</option><optgroup label=\"King Hussein School of Computing Sciences\"><option value=\"cs\">Computer Science B.SC.</option><option value=\"cg\">Computer Graphics and Animation B.SC.</option><option value=\"se\">Software Engineering B.SC.</option></optgroup><optgroup label=\"King Abdullah II School of Engineering\"><option value=\"ee\">Electronics Engineering B.SC.</option><option value=\"ce\">Computer Engineering B.SC.</option><option value=\"come\">Communications Engineering B.SC.</option><option value=\"epee\">Electrical Power and Energy Engineering B.SC.</option><option value=\"nise\">Networks and Information Security Engineering B.SC.</option></optgroup><optgroup label=\"King Talal School of Business Technology\"><option value=\"ba\">Business Administration B.SC.</option><option value=\"acc\">Accounting B.SC.</option><option value=\"em\">E-Marketing and Social Media B.SC.</option><option value=\"bit\">Business Information Technology B.SC.</option></optgroup>";
+          document.getElementById('year-row').style.display='none';
+        }
+
+        else if(statusArr[3].checked){
+          title.innerHTML="Degree:";
+          options.innerHTML="<option value=\"\" readonly>Please Choose Degree</option><optgroup label=\"King Abdullah I School of Graduate Studies and Scientific Research\"><option value=\"mcs\">Computer Science M.SC./option><option value=\"mds\">Data Science M.SC.</option><option value=\"mitsdc\">IT Security and Digital Criminology M.SC.</option><option value=\"misce\">Intelligent Systems and Computer Engineering M.SC.</option><option value=\"mee\">Electrical Engineering M.SC.</option><option value=\"mese\">Enterprise Systems Engineering M.SC.</option><option value=\"mem\">Engineering Management M.SC.</option><option value=\"mba\">Business Analytics M.SC.</option><option value=\"mbe\">Business Entrepreneurship M.SC.</option></optgroup>";
+          document.getElementById('year-row').style.display='none';
+        }
+
+      }
+
+   </script>
+
   </head>
 
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -164,29 +201,30 @@
                   <table cellpadding="10px" style="text-align: center">
                     <tr>
                       <td>First Name:</td>
-                      <td><input type="text" size="37" name="p-fname" id="p-fname"/></td>
+                      <td><input type="text" name="p-fname" id="p-fname" value="<?php echo $_SESSION['userFname'];?>"/></td>
                     </tr>
                     <tr>
                       <td>Last Name:</td>
-                      <td><input type="text" size="37" name="p-lname" id="p-lname"/></td>
+                      <td><input type="text" name="p-lname" id="p-lname" value="<?php echo $_SESSION['userLname'];?>"/></td>
                     </tr>
                     <tr>
                       <td>University:</td>
-                      <td><input type="text" size="37" name="p-uni" id="p-uni" value="Princess Sumaya University for Technology" readonly/></td>
+                      <td>Princess Sumaya University for Technology</td>
                     </tr>
                       <tr>
                         <td>Status:</td>
                         <td style="text-align:left">
-                          <label><input class="text-white" type="radio" name="status" value="undergrad" checked onchange()="handleChange()"/> Undergraduate</label><br>
-                          <label><input type="radio" name="status" value="grad" onchange()="handleChange()"/> Graduate</label><br>
-                          <label><input type="radio" name="status" value="alumni" onchange()="handleChange()"/> Alumnus</label>
+                          <label><input type="radio" name="status[]" value="undergrad" onchange="handleChange()" checked/> Undergraduate</label><br>
+                          <label><input type="radio" name="status[]" value="grad" onchange="handleChange()"/> Graduate</label><br>
+                          <label><input type="radio" name="status[]" value="undergrad-alumnus" onchange="handleChange()"/> Undergraduate Alumnus</label><br>
+                          <label><input type="radio" name="status[]" value="grad-alumnus" onchange="handleChange()"/> Graduate Alumnus</label>
                         </td>
                       </tr>
                       <tr>
                       <td id="studyTitle">Major:</td>
-                      <td id="studyOptions" style="text-align:left">
-
-                      <select>
+                      <td style="text-align:left">
+<!-- you have to change the select oops. what nothing i just typed stuff at the same time ohhh -->
+                      <select  id="studyOptions">
                         <option value="" readonly>Please Choose Major</option>
                         <optgroup label="King Hussein School of Computing Sciences">
                           <option value="cs">Computer Science</option>
@@ -211,11 +249,18 @@
                       </td>
                     </tr>
 
+                    <tr id="year-row">
+                      <td>Year:</td>
+                      <td style="text-align: left"><input name="p-year" type="number" min="1" max="8" style="width: 50px"/></td>
+                    </tr>
+
+
                     <tr>
-                      <td colspan="2">
-                        <button type="submit" name="profile-submit" class="btn btn-primary btn-outline-white py-3 px-5">Sign Up</button>
+                      <td colspan="2" style="text-align: center">
+                        <button type="submit" name="profile-submit" class="btn btn-primary btn-outline-white py-3 px-5">Save Changes</button>
                       </td>
                     </tr>
+
 
                   </table>
                 </form>
