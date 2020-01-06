@@ -191,7 +191,6 @@ if(isset($_SESSION['userId'])){
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
 
                   <li><a href="index.php" class="nav-link">Home</a></li>
-
                   <li><a href="chat.php" class="nav-link">Chat</a></li>
                   <li><a href="search.php" class="nav-link">Search Users</a></li>
                   <li><a href="report.php" class="nav-link">Report A Problem</a></li>
