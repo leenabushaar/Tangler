@@ -138,7 +138,8 @@
                 <?php
                   if(isset($_SESSION['userId'])){
 
-                    echo '<form action="includes/logout.inc.php" method="POST">
+                    echo '<p style="color:white">Hello, '.$_SESSION['userFname'].' '.$_SESSION['userLname'].'</p>
+                    <form action="includes/logout.inc.php" method="POST">
                     <button type="submit" name="logout-submit" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="logoutbtn">Log Out</button>
                     </form>';
                 }
@@ -157,6 +158,10 @@
               <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
                   <li class="active"><a href="index.php" class="nav-link">Home</a></li>
+                  <?php
+                    if(isset($_SESSION['userId']))
+                      echo '<li><a href="profile.php" class="nav-link">Your Profile</a></li>';
+                  ?>
                   <li><a href="chat.php" class="nav-link">Chat</a></li>
                   <li><a href="search.php" class="nav-link">Search Users</a></li>
                   <li><a href="report.php" class="nav-link">Report A Problem</a></li>

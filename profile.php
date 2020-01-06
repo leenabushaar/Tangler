@@ -1,6 +1,10 @@
 <?php
  session_start();
- ?>
+ if(!isset($_SESSION['userId'])){
+     header("Location: login.php");
+     die();
+ }
+?>
 
 <!doctype html>
 <html lang="en">
@@ -123,7 +127,6 @@
               <li><a href="report.php" class="nav-link">Report A Problem</a></li>
             </ul>
           </nav>
-          
         </div>
 
 
@@ -137,7 +140,7 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center">
-              <h1 class="mb-4 text-white">Chat Feature</h1>
+              <h1 class="mb-4 text-white">Your Profile</h1>
               <p class="mb-4">Soon to be developed.</p>
             </div>
           </div>
