@@ -91,7 +91,9 @@ $result="";
     }
 
 
-
+    html {
+      scroll-behavior: smooth;
+    }
 
 
     
@@ -250,11 +252,9 @@ $result="";
               <div class="col-lg-6 ml-auto">
                 <h2 class="footer-heading mb-4">Quick Links</h2>
                 <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Testimonials</a></li>
+                <li><a href="index.php">Home</a></li>
                   <li><a href="#">Terms of Service</a></li>
-                  <li><a href="#">Privacy</a></li>
-                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="report.php">Report a problem</a></li>
                 </ul>
               </div>
               <div class="col-lg-6">
