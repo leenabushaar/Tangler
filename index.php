@@ -157,7 +157,7 @@
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li class="active"><a href="index.php" class="nav-link">Home</a></li>
+                  <li><a href="index.php" class="nav-link active">Home</a></li>
                   <?php
                     if(isset($_SESSION['userId']))
                       echo '<li><a href="profile.php" class="nav-link">Your Profile</a></li>';
