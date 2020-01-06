@@ -74,6 +74,7 @@ $result="";
      background-color: transparent;
      color:#5f9eadbf;
      border-color: #5f9eadbf;
+     margin-top: 10px;
    }
 
 
@@ -138,9 +139,6 @@ $result="";
                 
                 <p><a href="login.php" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="loginbtn">Log In</a></p>
 
-                <form action="includes.logout.inc.php" method="POST">
-                  <button type="submit" name="logout-submit" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="logoutbtn">Log Out</button>
-                </form>
 
               </div>
             </div>

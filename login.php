@@ -33,7 +33,7 @@ if(isset($_SESSION['userId'])){
       background-color: transparent;
       color:#5f9eadbf;
       border-color: #5f9eadbf;
-      margin-top: 10px;
+      
     }
 
     .btn-primary:hover{
@@ -167,7 +167,7 @@ if(isset($_SESSION['userId'])){
       <header class="site-navbar site-navbar-target" role="banner">
 
         <div class="container">
-          <div class="row align-items-center position-relative">
+          <div class="row align-items-center position-relative" style="    margin-top: 18;">
 
             <div class="col-5">
               <div class="site-logo">

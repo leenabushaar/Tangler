@@ -58,7 +58,6 @@
 
 
 
-
   .log-button{
     border: none;
     margin-right: 0px;
