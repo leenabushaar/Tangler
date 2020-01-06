@@ -8,7 +8,7 @@ if (isset($_POST['login-submit'])){
   $password=$_POST['upass'];
 
   if (empty($email)||empty($password)) {
-    header("Location: ../login.php?error=emptyfields");
+    header("Location: ../login.php?error=emptyfields&uemail=".$email);
     exit();
   }
 
@@ -27,7 +27,7 @@ if (isset($_POST['login-submit'])){
       if($row = mysqli_fetch_assoc($result)){
         $pwdCheck=password_verify($password,$row['pwdUsers']);
         if($pwdCheck==false){
-          header("Location: ../login.php?error=wrongpassword");
+          header("Location: ../login.php?error=wrongpassword&uemail=".$email);
           exit();
         }
         elseif($pwdCheck==true){
@@ -40,12 +40,12 @@ if (isset($_POST['login-submit'])){
           exit();
         }
         else{
-          header("Location: ../login.php?error=wrongpassword");
+          header("Location: ../login.php?error=wrongpassword&uemail=".$email);
           exit();
         }
       }
       else{
-        header("Location: ../login.php?error=nouser");
+        header("Location: ../login.php?error=nouser&uemail=".$email);
         exit();
       }
     }

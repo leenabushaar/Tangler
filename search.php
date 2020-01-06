@@ -1,6 +1,10 @@
 <?php
  session_start();
- ?>
+ if(!isset($_SESSION['userId'])){
+     header("Location: login.php");
+     die();
+ }
+?>
 
 <!doctype html>
 <html lang="en">
@@ -52,7 +56,7 @@
 
 
 
-    
+
   .log-button{
     border: none;
     margin-right: 0px;
@@ -92,12 +96,19 @@
 
             <div class="col-5" style="padding-right: 25px">
               <div style="text-align:right">
-                
-                <p><a href="login.php" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="loginbtn">Log In</a></p>
 
-                <form action="includes.logout.inc.php" method="POST">
-                  <button type="submit" name="logout-submit" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="logoutbtn">Log Out</button>
-                </form>
+                <?php
+                  if(isset($_SESSION['userId'])){
+
+                    echo '<form action="includes/logout.inc.php" method="POST">
+                    <button type="submit" name="logout-submit" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="logoutbtn">Log Out</button>
+                    </form>';
+                    }
+
+                  else{
+                    echo '<p><a href="login.php" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="loginbtn">Log In</a></p>';
+                  }
+                ?>
 
               </div>
             </div>
@@ -127,7 +138,7 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center">
-              <h1 class="mb-4 text-white">About Us</h1>
+              <h1 class="mb-4 text-white">Search for Tanglers</h1>
               <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta veritatis in tenetur doloremque, maiores doloribus officia iste. Dolores.</p>
             </div>
           </div>

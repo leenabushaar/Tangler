@@ -164,7 +164,7 @@
 
             <div class="col-5">
               <div class="site-logo">
-                <a href="index.html" class="font-weight-bold">Tangler.</a>
+                <a href="index.php" class="font-weight-bold">Tangler.</a>
               </div>
             </div>
 
@@ -180,10 +180,10 @@
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li><a href="index.html" class="nav-link">Home</a></li>
-                  <li><a href="chat.html" class="nav-link">Chat</a></li>
-                  <li><a href="search.html" class="nav-link">Search Users</a></li>
-                  <li><a href="report.html" class="nav-link">Report A Problem</a></li>
+                  <li><a href="index.php" class="nav-link">Home</a></li>
+                  <li><a href="chat.php" class="nav-link">Chat</a></li>
+                  <li><a href="search.php" class="nav-link">Search Users</a></li>
+                  <li><a href="report.php" class="nav-link">Report A Problem</a></li>
                 </ul>
               </nav>
             </div>
@@ -216,7 +216,7 @@
                   </tr>
                   <tr>
                     <td colspan="2">
-                      <p><a href="chat.html" class="btn btn-primary btn-outline-white py-3 px-5">Log In</a></p>
+                      <p><a href="chat.php" class="btn btn-primary btn-outline-white py-3 px-5">Log In</a></p>
                     </td>
                   </tr>
                   <tr>
@@ -232,7 +232,7 @@
             </div>
               <!--<h1 class="mb-4 text-white">Your Virtual Campus</h1>
               <p class="mb-4">A networking platform for university students and alumnus.<br/>Search for Tanglers based on their university, major, and academic status.</p>
-              <p><a href="chat.html" class="btn btn-primary btn-outline-white py-3 px-5">Tangle Now</a></p>-->
+              <p><a href="chat.php" class="btn btn-primary btn-outline-white py-3 px-5">Tangle Now</a></p>-->
             </div>
           </div>
         </div>

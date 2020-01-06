@@ -192,9 +192,9 @@ if(isset($_SESSION['userId'])){
 
                   <li><a href="index.php" class="nav-link">Home</a></li>
 
-                  <li><a href="chat.html" class="nav-link">Chat</a></li>
-                  <li><a href="search.html" class="nav-link">Search Users</a></li>
-                  <li><a href="report.html" class="nav-link">Report A Problem</a></li>
+                  <li><a href="chat.php" class="nav-link">Chat</a></li>
+                  <li><a href="search.php" class="nav-link">Search Users</a></li>
+                  <li><a href="report.php" class="nav-link">Report A Problem</a></li>
                 </ul>
               </nav>
             </div>
@@ -214,12 +214,31 @@ if(isset($_SESSION['userId'])){
               <span class="text-white" style="float: none; margin: 0 auto; text-align: center">
                 <h3 class="text-white" style="text-align: left">Log In</h3>
             <!--  </div>
-              <div class="col-md-7 text center" id="login-form">
-            --><form action="includes/login.inc.php" method="POST">
+              <div class="col-md-7 text center" id="login-form">  -->
+
+
+              <?php
+                if(isset($_GET['error'])){
+
+                  if($_GET['error']=="emptyfields"){
+                    echo '<p class="signuperror">Fill in all fields!</p>';
+                  }
+
+                  elseif($_GET['error']=="wrongpassword"){
+                    echo '<p class="signuperror">Wrong Password.</p>';
+                  }
+
+                  elseif($_GET['error']=="nouser"){
+                    echo '<p class="signuperror">There is no user with this email.</p>';
+                  }
+                }
+                ?>
+
+          <form action="includes/login.inc.php" method="POST">
                 <table cellpadding="10px" style="text-align: center">
                   <tr>
                     <td class="text-white">Student E-mail:</td>
-                    <td><input type="text" name="uemail" value="@std.psut.edu.jo"/></td>
+                    <td><input type="text" name="uemail" value="<?php if(isset($_GET['uemail'])) echo $_GET['uemail']; else echo "@std.psut.edu.jo";?>"/></td>
                   </tr>
                   <tr>
                     <td class="text-white">Password:</td>
@@ -245,7 +264,7 @@ if(isset($_SESSION['userId'])){
             </div>
               <!--<h1 class="mb-4 text-white">Your Virtual Campus</h1>
               <p class="mb-4">A networking platform for university students and alumnus.<br/>Search for Tanglers based on their university, major, and academic status.</p>
-              <p><a href="chat.html" class="btn btn-primary btn-outline-white py-3 px-5">Tangle Now</a></p>-->
+              <p><a href="chat.php" class="btn btn-primary btn-outline-white py-3 px-5">Tangle Now</a></p>-->
             </div>
           </div>
         </div>
