@@ -105,7 +105,7 @@ if(isset($_SESSION['userId'])){
 #login-title{
 
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   margin-left: -194.995px;
   margin-top: -16.8px;
