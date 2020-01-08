@@ -102,7 +102,7 @@
 
         else if(statusArr[3].checked){
           title.innerHTML="Degree:";
-          options.innerHTML="<option value=\"\" readonly>Please Choose Degree</option><optgroup label=\"King Abdullah I School of Graduate Studies and Scientific Research\"><option value=\"mcs\">Computer Science M.SC./option><option value=\"mds\">Data Science M.SC.</option><option value=\"mitsdc\">IT Security and Digital Criminology M.SC.</option><option value=\"misce\">Intelligent Systems and Computer Engineering M.SC.</option><option value=\"mee\">Electrical Engineering M.SC.</option><option value=\"mese\">Enterprise Systems Engineering M.SC.</option><option value=\"mem\">Engineering Management M.SC.</option><option value=\"mba\">Business Analytics M.SC.</option><option value=\"mbe\">Business Entrepreneurship M.SC.</option></optgroup>";
+          options.innerHTML="<option value=\"\" readonly>Please Choose Degree</option><optgroup label=\"King Abdullah I School of Graduate Studies and Scientific Research\"><option value=\"mcs\">Computer Science M.SC.</option><option value=\"mds\">Data Science M.SC.</option><option value=\"mitsdc\">IT Security and Digital Criminology M.SC.</option><option value=\"misce\">Intelligent Systems and Computer Engineering M.SC.</option><option value=\"mee\">Electrical Engineering M.SC.</option><option value=\"mese\">Enterprise Systems Engineering M.SC.</option><option value=\"mem\">Engineering Management M.SC.</option><option value=\"mba\">Business Analytics M.SC.</option><option value=\"mbe\">Business Entrepreneurship M.SC.</option></optgroup>";
           document.getElementById('year-row').style.display='none';
         }
 
@@ -201,11 +201,11 @@
                   <table cellpadding="10px" style="text-align: center">
                     <tr>
                       <td>First Name:</td>
-                      <td><input type="text" name="p-fname" id="p-fname" value="<?php echo $_SESSION['userFname'];?>"/></td>
+                      <td><input type="text" name="p-fname" id="p-fname" value="<?php echo $_SESSION['userFname'];?>" required/></td>
                     </tr>
                     <tr>
                       <td>Last Name:</td>
-                      <td><input type="text" name="p-lname" id="p-lname" value="<?php echo $_SESSION['userLname'];?>"/></td>
+                      <td><input type="text" name="p-lname" id="p-lname" value="<?php echo $_SESSION['userLname'];?>" required/></td>
                     </tr>
                     <tr>
                       <td>University:</td>
@@ -223,8 +223,7 @@
                       <tr>
                       <td id="studyTitle">Major:</td>
                       <td style="text-align:left">
-<!-- you have to change the select oops. what nothing i just typed stuff at the same time ohhh -->
-                      <select  id="studyOptions">
+                      <select name='p-degree' id="studyOptions">
                         <option value="" readonly>Please Choose Major</option>
                         <optgroup label="King Hussein School of Computing Sciences">
                           <option value="cs">Computer Science</option>

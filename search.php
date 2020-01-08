@@ -53,10 +53,6 @@
 
 
 
-
-
-
-
   .log-button{
     border: none;
     margin-right: 0px;
@@ -142,7 +138,7 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center">
               <h1 class="mb-4 text-white">Search for Tanglers</h1>
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta veritatis in tenetur doloremque, maiores doloribus officia iste. Dolores.</p>
+              <p class="mb-4" style="font-style: italic"><br>Tip of the day:<br><br>Don't forget to update your profile information<br>to appear on the search results of other Tanglers!</p>
             </div>
           </div>
         </div>
@@ -154,12 +150,49 @@
 
     <div class="site-section">
       <div class="container">
+
+        <div class="topnav">
+          <input type="text" placeholder="Search by name" style="width:25%">
+          <p><a href="#" class="btn btn-primary px-5">Search Users</a></p>
+        </div>
+
         <div class="row align-items-center">
           <div class="col-md-4">
-            <h2 class="h4 mb-4">About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae voluptatem mollitia obcaecati quod maxime. Soluta libero eligendi voluptatum, natus debitis.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, quasi!</p>
-            <p><a href="#" class="btn btn-primary px-5">Our works</a></p>
+            <h2 class="h4 mb-4">Search by Filter</h2>
+              <p><label style="font-weight:bold">Status</label><br>
+              <label><input type="radio" name="status[]" value="undergrad" onchange="handleChange()" checked/> Undergraduate</label><br>
+              <label><input type="radio" name="status[]" value="grad" onchange="handleChange()"/> Graduate</label><br>
+              <label><input type="radio" name="status[]" value="undergrad-alumnus" onchange="handleChange()"/> Undergraduate Alumnus</label><br>
+              <label><input type="radio" name="status[]" value="grad-alumnus" onchange="handleChange()"/> Graduate Alumnus</label>
+              </p>
+
+              <p><label style="font-weight:bold">Major</label>
+              <select name='p-degree' id="studyOptions">
+              <option value="" readonly>Select a Major</option>
+              <optgroup label="King Hussein School of Computing Sciences">
+                <option value="cs">Computer Science</option>
+                <option value="cg">Computer Graphics and Animation</option>
+                <option value="se">Software Engineering</option>
+              </optgroup>
+              <optgroup label="King Abdullah II School of Engineering">
+                <option value="ee">Electronics Engineering</option>
+                <option value="ce">Computer Engineering</option>
+                <option value="come">Communications Engineering</option>
+                <option value="epee">Electrical Power and Energy Engineering</option>
+                <option value="nise">Networks and Information Security Engineering</option>
+              </optgroup>
+              <optgroup label="King Talal School of Business Technology">
+                <option value="ba">Business Administration</option>
+                <option value="acc">Accounting</option>
+                <option value="em">E-Marketing and Social Media</option>
+                <option value="bit">Business Information Technology</option>
+              </optgroup>
+            </select>
+            </p>
+            <p><label style="font-weight:bold">Year</label>
+            <input style="margin-left:10px" name="p-year" type="number" min="1" max="8" style="width: 50px"/>
+            </p>
+            <p><a href="#" class="btn btn-primary px-5">Search Users</a></p>
           </div>
           <div class="col-md-4">
             <img src="images/about_1.jpg" alt="Image" class="img-fluid">
@@ -321,7 +354,7 @@
       </div>
     </div>
 
-    <div class="site-section">
+    <!--<div class="site-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-7 mx-auto text-center">
@@ -382,17 +415,17 @@
           <div class="col-md-12">
             <div class="border-top pt-5">
               <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
+          -->  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <!--Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+        -->    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        <!--    </p>
             </div>
           </div>
 
         </div>
       </div>
     </footer>
-
+-->
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>

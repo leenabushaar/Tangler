@@ -178,9 +178,22 @@ if(isset($_SESSION['userId'])){
             <div class="col-5" style="padding-right: 25px">
               <div style="text-align:right">
 
+                <?php
+                  if(isset($_SESSION['userId'])){
+
+                    echo '<p style="color:white">Hello, '.$_SESSION['userFname'].' '.$_SESSION['userLname'].'</p>
+                    <form action="includes/logout.inc.php" method="POST">
+                    <button type="submit" name="logout-submit" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="logoutbtn">Log Out</button>
+                    </form>';
+                }
+                else{
+                  echo '<p><a href="login.php" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="loginbtn">Log In</a></p>';
+                }
+                ?>
+
               </div>
             </div>
-
+            
             <div class="col-2  text-right">
 
               <span class="d-inline-block d-lg-block"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
