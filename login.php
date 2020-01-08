@@ -33,7 +33,7 @@ if(isset($_SESSION['userId'])){
       background-color: transparent;
       color:#5f9eadbf;
       border-color: #5f9eadbf;
-      
+
     }
 
     .btn-primary:hover{
@@ -126,7 +126,6 @@ if(isset($_SESSION['userId'])){
 #createAccLink{
   color: white;
   /*border:1px solid white;*/
-  padding: 5px;
   border-radius:15px;
 }
 #createAccLink:hover{
@@ -143,6 +142,14 @@ if(isset($_SESSION['userId'])){
   box-shadow: 1px 1px 1px 1px #3d6f7be6 !important;
 
 }
+
+#createAcc{
+  position: absolute;
+  bottom: 0px;
+  margin-left: -133.855px;
+  left: 40%;
+}
+
 
     </style>
 
@@ -208,33 +215,37 @@ if(isset($_SESSION['userId'])){
       <div class="site-section-cover overlay" style="background-image: url('images/cover.jpg')">
         <div class="container">
           <div class="row align-items-center justify-content-center" id="form-container">
-            <div class="col-md-7 text-center" id="login-title">
+            <div class="col-md-5">
+              <div class="row justify-content-center sign-up">
 
-              <span class="text-white" style="float: none; margin: 0 auto; text-align: center">
-                <h3 class="text-white" style="text-align: left">Log In</h3>
-            <!--  </div>
-              <div class="col-md-7 text center" id="login-form">  -->
+                <h3 style="color: white">Log In</h3>
 
+              </div>
+
+              <div class="row">
 
               <?php
                 if(isset($_GET['error'])){
 
                   if($_GET['error']=="emptyfields"){
-                    echo '<p class="signuperror">Fill in all fields!</p>';
+                    echo '<p style="text-align: left; margin-left: 65px; font-weight: bold" class="signuperror">Fill in all fields!</p>';
                   }
 
                   elseif($_GET['error']=="wrongpassword"){
-                    echo '<p class="signuperror">Wrong Password.</p>';
+                    echo '<p style="text-align: left; margin-left: 65px; font-weight: bold" class="signuperror">Wrong Password.</p>';
                   }
 
                   elseif($_GET['error']=="nouser"){
-                    echo '<p class="signuperror">There is no user with this email.</p>';
+                    echo '<p style="text-align: left; margin-left: 65px; font-weight: bold" class="signuperror">There is no user with this email.</p>';
                   }
                 }
                 ?>
 
-          <form action="includes/login.inc.php" method="POST">
-                <table cellpadding="10px" style="text-align: center">
+              </div>
+
+              <div class="row justify-content-center">
+                <form action="includes/login.inc.php" method="POST">
+                  <table cellpadding="10px" style="text-align: left">
                   <tr>
                     <td class="text-white">Student E-mail:</td>
                     <td><input type="text" name="uemail" value="<?php if(isset($_GET['uemail'])) echo $_GET['uemail']; else echo "@std.psut.edu.jo";?>"/></td>
@@ -244,23 +255,18 @@ if(isset($_SESSION['userId'])){
                     <td><input type="password" name="upass"/></td>
                   </tr>
                   <tr>
-                    <td colspan="2">
+                    <td colspan="2" style="text-align: center">
                       <button type="submit" name="login-submit" class="btn btn-primary btn-outline-white py-3 px-5">Log In</button>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                    </td>
-                    <td>
-
-                      <p><a id="createAccLink" href="signup.php"/>New to Tangler? Create An Account.</a><p>
-
-                    </td>
-                  </tr>
                 </table>
-              </form>
-            </span>
+                </form>
+                      <div class="row  justify-content-center">
+                        <a id="createAccLink" href="signup.php"/>New to Tangler? Create An Account.</a>
+                      </div>
+
             </div>
+          </div>
               <!--<h1 class="mb-4 text-white">Your Virtual Campus</h1>
               <p class="mb-4">A networking platform for university students and alumnus.<br/>Search for Tanglers based on their university, major, and academic status.</p>
               <p><a href="chat.php" class="btn btn-primary btn-outline-white py-3 px-5">Tangle Now</a></p>-->

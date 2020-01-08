@@ -31,11 +31,7 @@
 
     <style>
 
-    .page-form{
 
-      position: absolute;
-      top:40%;
-    }
       .btn-primary{
      background-color: transparent;
      color:#5f9eadbf;

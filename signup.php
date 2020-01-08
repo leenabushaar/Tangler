@@ -144,6 +144,11 @@ if(isset($_SESSION['userId'])){
 
 }
 
+.sign-up{
+  margin-top: 25%;
+}
+
+
     </style>
 
   </head>
@@ -193,7 +198,7 @@ if(isset($_SESSION['userId'])){
 
               </div>
             </div>
-            
+
             <div class="col-2  text-right">
 
               <span class="d-inline-block d-lg-block"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
@@ -218,31 +223,32 @@ if(isset($_SESSION['userId'])){
       <div class="site-section-cover overlay" style="background-image: url('images/cover.jpg')">
         <div class="container">
           <div class="row align-items-center justify-content-center" id="form-container">
-            <div class="col-md-7 text-center" id="login-title">
+            <div class="col-md-5">
+              <div class="row justify-content-center sign-up">
 
-              <span class="text-white" style="float: none; margin: 0 auto; text-align: center">
-                <h3 class="text-white" style="text-align: left">Sign Up</h3>
-            <!--  </div>
-              <div class="col-md-7 text center" id="login-form">
-            -->
+            <h3 style="color: white">Sign Up</h3>
+
+          </div>
+
+          <div class="row">
 
             <?php
               if(isset($_GET['error'])){
 
                 if($_GET['error']=="emptyfields"){
-                  echo '<p class="signuperror">Fill in all fields!</p>';
+                  echo '<p  style="text-align: left; margin-left: 65px; font-weight: bold" class="signuperror">Fill in all fields!</p>';
                 }
 
                 elseif($_GET['error']=="invalidemail"){
-                  echo '<p class="signuperror">Invalid student email.</p>';
+                  echo '<p style="text-align: left margin-left: 65px; font-weight: bold" class="signuperror">Invalid student email.</p>';
                 }
 
                 elseif($_GET['error']=="invalidfirstname"){
-                  echo '<p class="signuperror">First name should only include letters.</p>';
+                  echo '<p style="text-align: left margin-left: 65px; font-weight: bold" class="signuperror">First name should only include letters.</p>';
                 }
 
                 elseif($_GET['error']=="invalidlastname"){
-                  echo '<p class="signuperror">Last name should only include letters and spaces.</p>';
+                  echo '<p style="text-align: left" class="signuperror">Last name should only include letters and spaces.</p>';
                 }
 
                 elseif($_GET['error']=="passwordcheck"){
@@ -250,18 +256,20 @@ if(isset($_SESSION['userId'])){
                 }
 
                 elseif($_GET['error']=="emailexistsalready"){
-                  echo '<p class="signuperror">Account for this email exists already.</p>';
+                  echo '<p style="text-align: left" class="signuperror">Account for this email exists already.</p>';
                 }
               }
               ?>
 
+            </div>
+
+            <div class="row justify-content-center">
               <form action="includes/signup.inc.php" method="POST">
-                <table cellpadding="10px" style="text-align: center">
+                <table cellpadding="10px" style="text-align: left">
                   <tr>
                     <td class="text-white">First Name:</td>
                     <td><input type="text" name="ufname" id="fname" value="<?php if(isset($_GET['ufname'])) echo $_GET['ufname'];?>"/></td>
                   </tr>
-                  <tr>
                     <td class="text-white">Last Name:</td>
                     <td><input type="text" name="ulname" id="lname" value="<?php if(isset($_GET['ulname'])) echo $_GET['ulname'];?>"/></td>
                   </tr>
@@ -278,14 +286,14 @@ if(isset($_SESSION['userId'])){
                     <td><input type="password" name="repeatpass" id="rpass"/></td>
                   </tr>
                   <tr>
-                    <td colspan="2">
+                    <td colspan="2" style="text-align: center">
                       <button type="submit" name="signup-submit" class="btn btn-primary btn-outline-white py-3 px-5">Sign Up</button>
                     </td>
                   </tr>
                 </table>
               </form>
-            </span>
             </div>
+          </div>
               <!--<h1 class="mb-4 text-white">Your Virtual Campus</h1>
               <p class="mb-4">A networking platform for university students and alumnus.<br/>Search for Tanglers based on their university, major, and academic status.</p>
               <p><a href="chat.php" class="btn btn-primary btn-outline-white py-3 px-5">Tangle Now</a></p>-->
