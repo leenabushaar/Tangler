@@ -262,11 +262,7 @@ $result="";
                   <a href="#"><span class="icon-instagram"></span></a>
                   <a href="#"><span class="icon-twitter"></span></a>
                  </div>
-                <h2 class="footer-heading mb-4">Newsletter</h2>
-                <form action="#" class="d-flex" class="subscribe">
-                  <input type="text" class="form-control mr-3" placeholder="Email">
-                  <input type="submit" value="Send" class="btn btn-primary">
-                </form>
+
               </div>
 
             </div>
