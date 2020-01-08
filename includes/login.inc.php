@@ -35,9 +35,9 @@ if (isset($_POST['login-submit'])){
           $_SESSION['userId']=$row['idUsers'];
           $_SESSION['userFname']= $row['fnameUsers'];
           $_SESSION['userLname']= $row['lnameUsers'];
-          $_SESSION['userStatus']="";
-          $_SESSION['userDegree']="";
-          $_SESSION['userYear']=0;
+          $_SESSION['userStatus']=$row['statusUsers'];
+          $_SESSION['userDegree']=$row['degreeUsers'];
+          $_SESSION['userYear']=$row['yearUsers'];
 
           header("Location: ../index.php?login=success");
           exit();
