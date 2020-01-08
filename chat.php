@@ -31,6 +31,7 @@
      background-color: transparent;
      color:#5f9eadbf;
      border-color: #5f9eadbf;
+     margin-top: 10px;
    }
 
 
@@ -47,7 +48,9 @@
       box-shadow: 1px 1px 1px 1px #3d6f7be6 !important;
     }
 
-
+    html {
+      scroll-behavior: smooth;
+    }
 
 
 
@@ -118,7 +121,7 @@
                 if(isset($_SESSION['userId']))
                   echo '<li><a href="profile.php" class="nav-link">Your Profile</a></li>';
               ?>
-              <li><a href="chat.php" class="nav-link active">Chat</a></li>
+              <li class="active"><a href="chat.php" class="nav-link">Chat</a></li>
               <li><a href="search.php" class="nav-link">Search Users</a></li>
               <li><a href="report.php" class="nav-link">Report A Problem</a></li>
             </ul>
@@ -133,7 +136,7 @@
   </header>
 
   <div class="ftco-blocks-cover-1">
-      <div class="site-section-cover overlay" style="background-image: url('images/hero_1.jpg')">
+      <div class="site-section-cover overlay" style="background-image: url('images/cover.jpg')">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center">

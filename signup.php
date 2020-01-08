@@ -105,7 +105,7 @@ if(isset($_SESSION['userId'])){
 #login-title{
 
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   margin-left: -194.995px;
   margin-top: -16.8px;
@@ -215,7 +215,7 @@ if(isset($_SESSION['userId'])){
       </header>
 
     <div class="ftco-blocks-cover-1">
-      <div class="site-section-cover overlay" style="background-image: url('images/hero_1.jpg')">
+      <div class="site-section-cover overlay" style="background-image: url('images/cover.jpg')">
         <div class="container">
           <div class="row align-items-center justify-content-center" id="form-container">
             <div class="col-md-7 text-center" id="login-title">

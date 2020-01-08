@@ -52,6 +52,9 @@
     }
 
 
+    html {
+      scroll-behavior: smooth;
+    }
 
   .log-button{
     border: none;
@@ -120,7 +123,7 @@
                       echo '<li><a href="profile.php" class="nav-link">Your Profile</a></li>';
                   ?>
                   <li><a href="chat.php" class="nav-link">Chat</a></li>
-                  <li><a href="search.php" class="nav-link active">Search Users</a></li>
+                  <li class="active"><a href="search.php" class="nav-link ">Search Users</a></li>
                   <li><a href="report.php" class="nav-link">Report A Problem</a></li>
                 </ul>
               </nav>
@@ -133,7 +136,7 @@
       </header>
 
     <div class="ftco-blocks-cover-1">
-      <div class="site-section-cover overlay" style="background-image: url('images/hero_1.jpg')">
+      <div class="site-section-cover overlay" style="background-image: url('images/cover.jpg')">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center">
@@ -387,11 +390,9 @@
               <div class="col-lg-6 ml-auto">
                 <h2 class="footer-heading mb-4">Quick Links</h2>
                 <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Testimonials</a></li>
+                <li><a href="index.php">Home</a></li>
                   <li><a href="#">Terms of Service</a></li>
-                  <li><a href="#">Privacy</a></li>
-                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="report.php">Report a problem</a></li>
                 </ul>
               </div>
               <div class="col-lg-6">
@@ -401,11 +402,6 @@
                   <a href="#"><span class="icon-instagram"></span></a>
                   <a href="#"><span class="icon-twitter"></span></a>
                  </div>
-                <h2 class="footer-heading mb-4">Newsletter</h2>
-                <form action="#" class="d-flex" class="subscribe">
-                  <input type="text" class="form-control mr-3" placeholder="Email">
-                  <input type="submit" value="Send" class="btn btn-primary">
-                </form>
               </div>
 
             </div>

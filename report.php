@@ -74,6 +74,7 @@ $result="";
      background-color: transparent;
      color:#5f9eadbf;
      border-color: #5f9eadbf;
+     margin-top: 10px;
    }
 
 
@@ -91,7 +92,9 @@ $result="";
     }
 
 
-
+    html {
+      scroll-behavior: smooth;
+    }
 
 
     
@@ -136,9 +139,6 @@ $result="";
                 
                 <p><a href="login.php" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="loginbtn">Log In</a></p>
 
-                <form action="includes.logout.inc.php" method="POST">
-                  <button type="submit" name="logout-submit" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="logoutbtn">Log Out</button>
-                </form>
 
               </div>
             </div>
@@ -164,7 +164,7 @@ $result="";
       </header>
 
     <div class="ftco-blocks-cover-1">
-      <div class="site-section-cover overlay" style="background-image: url('images/hero_1.jpg')">
+      <div class="site-section-cover overlay" style="background-image: url('images/cover.jpg')">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center">
@@ -250,11 +250,9 @@ $result="";
               <div class="col-lg-6 ml-auto">
                 <h2 class="footer-heading mb-4">Quick Links</h2>
                 <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Testimonials</a></li>
+                <li><a href="index.php">Home</a></li>
                   <li><a href="#">Terms of Service</a></li>
-                  <li><a href="#">Privacy</a></li>
-                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="report.php">Report a problem</a></li>
                 </ul>
               </div>
               <div class="col-lg-6">
@@ -264,11 +262,7 @@ $result="";
                   <a href="#"><span class="icon-instagram"></span></a>
                   <a href="#"><span class="icon-twitter"></span></a>
                  </div>
-                <h2 class="footer-heading mb-4">Newsletter</h2>
-                <form action="#" class="d-flex" class="subscribe">
-                  <input type="text" class="form-control mr-3" placeholder="Email">
-                  <input type="submit" value="Send" class="btn btn-primary">
-                </form>
+
               </div>
 
             </div>
