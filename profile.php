@@ -84,25 +84,25 @@
 
         if(statusArr[0].checked){
           title.innerHTML="Major:";
-          options.innerHTML="<option value=\"\" readonly>Please Choose Major</option><optgroup label=\"King Hussein School of Computing Sciences\"><option value=\"cs\">Computer Science</option><option value=\"cg\">Computer Graphics and Animation</option><option value=\"se\">Software Engineering</option></optgroup><optgroup label=\"King Abdullah II School of Engineering\"><option value=\"ee\">Electronics Engineering</option><option value=\"ce\">Computer Engineering</option><option value=\"come\">Communications Engineering</option><option value=\"epee\">Electrical Power and Energy Engineering</option><option value=\"nise\">Networks and Information Security Engineering</option></optgroup><optgroup label=\"King Talal School of Business Technology\"><option value=\"ba\">Business Administration</option><option value=\"acc\">Accounting</option><option value=\"em\">E-Marketing and Social Media</option><option value=\"bit\">Business Information Technology</option></optgroup>";
+          options.innerHTML="<select name='p-degree' required><option value=\"\" readonly>Please Choose Major</option><optgroup label=\"King Hussein School of Computing Sciences\"><option value=\"cs\">Computer Science</option><option value=\"cg\">Computer Graphics and Animation</option><option value=\"se\">Software Engineering</option></optgroup><optgroup label=\"King Abdullah II School of Engineering\"><option value=\"ee\">Electronics Engineering</option><option value=\"ce\">Computer Engineering</option><option value=\"come\">Communications Engineering</option><option value=\"epee\">Electrical Power and Energy Engineering</option><option value=\"nise\">Networks and Information Security Engineering</option></optgroup><optgroup label=\"King Talal School of Business Technology\"><option value=\"ba\">Business Administration</option><option value=\"acc\">Accounting</option><option value=\"em\">E-Marketing and Social Media</option><option value=\"bit\">Business Information Technology</option></optgroup></select>";
           document.getElementById('year-row').style.display='block';
         }
 
         else if(statusArr[1].checked){
           title.innerHTML="Program:";
-          options.innerHTML="<option value=\"\" readonly>Please Choose Program</option><optgroup label=\"King Abdullah I School of Graduate Studies and Scientific Research\"><option value=\"mcs\">Computer Science</option><option value=\"mds\">Data Science</option><option value=\"mitsdc\">IT Security and Digital Criminology</option><option value=\"misce\">Intelligent Systems and Computer Engineering</option><option value=\"mee\">Electrical Engineering</option><option value=\"mese\">Enterprise Systems Engineering</option><option value=\"mem\">Engineering Management</option><option value=\"mba\">Business Analytics</option><option value=\"mbe\">Business Entrepreneurship</option></optgroup>";
+          options.innerHTML="<select name='p-degree' required><option value=\"\" readonly>Please Choose Program</option><optgroup label=\"King Abdullah I School of Graduate Studies and Scientific Research\"><option value=\"mcs\">Computer Science</option><option value=\"mds\">Data Science</option><option value=\"mitsdc\">IT Security and Digital Criminology</option><option value=\"misce\">Intelligent Systems and Computer Engineering</option><option value=\"mee\">Electrical Engineering</option><option value=\"mese\">Enterprise Systems Engineering</option><option value=\"mem\">Engineering Management</option><option value=\"mba\">Business Analytics</option><option value=\"mbe\">Business Entrepreneurship</option></optgroup></select>";
           document.getElementById('year-row').style.display='none';
         }
 
         else if(statusArr[2].checked){
           title.innerHTML="Degree:";
-          options.innerHTML="<option value=\"\" readonly>Please Choose Degree</option><optgroup label=\"King Hussein School of Computing Sciences\"><option value=\"cs\">Computer Science B.SC.</option><option value=\"cg\">Computer Graphics and Animation B.SC.</option><option value=\"se\">Software Engineering B.SC.</option></optgroup><optgroup label=\"King Abdullah II School of Engineering\"><option value=\"ee\">Electronics Engineering B.SC.</option><option value=\"ce\">Computer Engineering B.SC.</option><option value=\"come\">Communications Engineering B.SC.</option><option value=\"epee\">Electrical Power and Energy Engineering B.SC.</option><option value=\"nise\">Networks and Information Security Engineering B.SC.</option></optgroup><optgroup label=\"King Talal School of Business Technology\"><option value=\"ba\">Business Administration B.SC.</option><option value=\"acc\">Accounting B.SC.</option><option value=\"em\">E-Marketing and Social Media B.SC.</option><option value=\"bit\">Business Information Technology B.SC.</option></optgroup>";
+          options.innerHTML="<select name='p-degree' required><option value=\"\" readonly>Please Choose Degree</option><optgroup label=\"King Hussein School of Computing Sciences\"><option value=\"cs\">Computer Science B.SC.</option><option value=\"cg\">Computer Graphics and Animation B.SC.</option><option value=\"se\">Software Engineering B.SC.</option></optgroup><optgroup label=\"King Abdullah II School of Engineering\"><option value=\"ee\">Electronics Engineering B.SC.</option><option value=\"ce\">Computer Engineering B.SC.</option><option value=\"come\">Communications Engineering B.SC.</option><option value=\"epee\">Electrical Power and Energy Engineering B.SC.</option><option value=\"nise\">Networks and Information Security Engineering B.SC.</option></optgroup><optgroup label=\"King Talal School of Business Technology\"><option value=\"ba\">Business Administration B.SC.</option><option value=\"acc\">Accounting B.SC.</option><option value=\"em\">E-Marketing and Social Media B.SC.</option><option value=\"bit\">Business Information Technology B.SC.</option></optgroup></select>";
           document.getElementById('year-row').style.display='none';
         }
 
         else if(statusArr[3].checked){
           title.innerHTML="Degree:";
-          options.innerHTML="<option value=\"\" readonly>Please Choose Degree</option><optgroup label=\"King Abdullah I School of Graduate Studies and Scientific Research\"><option value=\"mcs\">Computer Science M.SC.</option><option value=\"mds\">Data Science M.SC.</option><option value=\"mitsdc\">IT Security and Digital Criminology M.SC.</option><option value=\"misce\">Intelligent Systems and Computer Engineering M.SC.</option><option value=\"mee\">Electrical Engineering M.SC.</option><option value=\"mese\">Enterprise Systems Engineering M.SC.</option><option value=\"mem\">Engineering Management M.SC.</option><option value=\"mba\">Business Analytics M.SC.</option><option value=\"mbe\">Business Entrepreneurship M.SC.</option></optgroup>";
+          options.innerHTML="<select name='p-degree' required><option value=\"\" readonly>Please Choose Degree</option><optgroup label=\"King Abdullah I School of Graduate Studies and Scientific Research\"><option value=\"mcs\">Computer Science M.SC.</option><option value=\"mds\">Data Science M.SC.</option><option value=\"mitsdc\">IT Security and Digital Criminology M.SC.</option><option value=\"misce\">Intelligent Systems and Computer Engineering M.SC.</option><option value=\"mee\">Electrical Engineering M.SC.</option><option value=\"mese\">Enterprise Systems Engineering M.SC.</option><option value=\"mem\">Engineering Management M.SC.</option><option value=\"mba\">Business Analytics M.SC.</option><option value=\"mbe\">Business Entrepreneurship M.SC.</option></optgroup></select>";
           document.getElementById('year-row').style.display='none';
         }
 
@@ -214,16 +214,20 @@
                       <tr>
                         <td>Status:</td>
                         <td style="text-align:left">
-                          <label><input type="radio" name="status[]" value="undergrad" onchange="handleChange()" checked/> Undergraduate</label><br>
-                          <label><input type="radio" name="status[]" value="grad" onchange="handleChange()"/> Graduate</label><br>
-                          <label><input type="radio" name="status[]" value="undergrad-alumnus" onchange="handleChange()"/> Undergraduate Alumnus</label><br>
-                          <label><input type="radio" name="status[]" value="grad-alumnus" onchange="handleChange()"/> Graduate Alumnus</label>
+                          <label><input type="radio" name="status[]" value="undergrad" onchange="handleChange()" <?php if ( (isset($_SESSION['userStatus'])) && ($_SESSION['userStatus']=="undergrad") ) echo 'checked'; if(!isset($_SESSION['userStatus'])) echo 'checked';?>/> Undergraduate</label><br>
+                          <label><input type="radio" name="status[]" value="grad" onchange="handleChange()" <?php if ( (isset($_SESSION['userStatus'])) && ($_SESSION['userStatus']=="grad") ) echo 'checked';?>/> Graduate</label><br>
+                          <label><input type="radio" name="status[]" value="undergrad-alumnus" onchange="handleChange()" <?php if ( (isset($_SESSION['userStatus'])) && ($_SESSION['userStatus']=="undergrad-alumnus") ) echo 'checked';?>/> Undergraduate Alumnus</label><br>
+                          <label><input type="radio" name="status[]" value="grad-alumnus" onchange="handleChange()" <?php if ( (isset($_SESSION['userStatus'])) && ($_SESSION['userStatus']=="grad-alumnus") ) echo 'checked';?>/> Graduate Alumnus</label>
                         </td>
                       </tr>
                       <tr>
                       <td id="studyTitle">Major:</td>
-                      <td style="text-align:left">
-                      <select name='p-degree' id="studyOptions">
+                      <td style="text-align:left" id="studyOptions">
+                        <?php if($_SESSION['userDegree']!="") echo $_SESSION['userDegree']." <button name=\"change-major\" class=\"btn btn-primary btn-outline-white py-3 px-5\" onclick=\"handleChange()\">Change Major</button>";
+                        else echo "<select name='p-degree' id='studyOptions' required><option value=\"\" readonly>Please Choose Program</option><optgroup label=\"King Abdullah I School of Graduate Studies and Scientific Research\"><option value=\"mcs\">Computer Science</option><option value=\"mds\">Data Science</option><option value=\"mitsdc\">IT Security and Digital Criminology</option><option value=\"misce\">Intelligent Systems and Computer Engineering</option><option value=\"mee\">Electrical Engineering</option><option value=\"mese\">Enterprise Systems Engineering</option><option value=\"mem\">Engineering Management</option><option value=\"mba\">Business Analytics</option><option value=\"mbe\">Business Entrepreneurship</option></optgroup></select>";
+                        ?>
+
+                      <!--<select name='p-degree' required>
                         <option value="" readonly>Please Choose Major</option>
                         <optgroup label="King Hussein School of Computing Sciences">
                           <option value="cs">Computer Science</option>
@@ -244,13 +248,13 @@
                           <option value="bit">Business Information Technology</option>
                         </optgroup>
                       </select>
-
+-->
                       </td>
                     </tr>
 
-                    <tr id="year-row">
+                    <tr id="year-row" style="display: <?php if($_SESSION['userStatus']!='undergrad') echo 'none';?>">
                       <td>Year:</td>
-                      <td style="text-align: left"><input name="p-year" type="number" min="1" max="8" style="width: 50px"/></td>
+                      <td style="text-align: left"><input name="p-year" type="number" min="1" max="8" style="width: 50px" value="<?php if ( (isset($_SESSION['userYear'])) && ($_SESSION['userYear']!=0)) echo $_SESSION['userYear'];?>"/></td>
                     </tr>
 
 
