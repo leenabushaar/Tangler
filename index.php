@@ -243,7 +243,8 @@
           <div class="col-md-6 col-lg-3">
             <div class="service-29128 text-center">
               <span class="d-block wrap-icon">
-                <span class="icon-desktop_mac"></span>
+              <span class="person-pic-39219 mb-4">
+                <img src="images/computer science3.png" alt="Image" class="img-fluid">
               </span>
               <h3 class="person">Person X</h3>
               <p class="description" style="line-height:2.2em">PSUT<br/><span class="year">Undergraduate, Year 3</span><br/>Computer Science</p>
@@ -252,7 +253,8 @@
           <div class="col-md-6 col-lg-3">
             <div class="service-29128 text-center">
               <span class="d-block wrap-icon">
-                <span class="icon-desktop_mac"></span>
+              <span class="person-pic-39219 mb-4">
+                <img src="images/business administration1.png" alt="Image" class="img-fluid">
               </span>
               <h3 class="person">Person Y</h3>
               <p class="description" style="line-height:2.2em">PSUT<br/><span class="year">Undergraduate, Year 1</span><br/>Business Administration</p>
@@ -261,7 +263,8 @@
           <div class="col-md-6 col-lg-3">
             <div class="service-29128 text-center">
               <span class="d-block wrap-icon">
-                <span class="icon-desktop_mac"></span>
+              <span class="person-pic-39219 mb-4">
+                <img src="images/electrical engineering.png" alt="Image" class="img-fluid">
               </span>
               <h3 class="person">Person Z</h3>
               <p class="description" style="line-height:2.2em">PSUT<br/><span class="year">Graduate, Year 2</span><br/>Electrical Engineering</p>
@@ -270,10 +273,11 @@
           <div class="col-md-6 col-lg-3">
             <div class="service-29128 text-center">
               <span class="d-block wrap-icon">
-                <span class="icon-desktop_mac"></span>
+              <span class="person-pic-39219 mb-4">
+                <img src="images/computer engineering6.png" alt="Image" class="img-fluid">
               </span>
               <h3 class="person">Person W</h3>
-              <p class="description" style="line-height:2.2em">PSUT<br/><span class="year">2019 Alumnus</span><br/>B.SC. in Accounting</p>
+              <p class="description" style="line-height:2.2em">PSUT<br/><span class="year">Undergraduate, Year 6</span><br/>Computer Engineering</p>
             </div>
           </div>
         </div>
