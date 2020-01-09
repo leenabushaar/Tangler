@@ -53,7 +53,7 @@
     }
 
     .uniImages{
-      text-align: center;
+    
       height:230px;
     }
    .item{
@@ -289,36 +289,34 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-md-6 col-lg-4 mb-4">
+        <div class="row justify-content-center text-center">
+          <!-- <div class="col-md-6 col-lg-4 mb-4">
             <div class="item web">
-              <!--<a href="" class="item-wrap" data-fancybox="gal" data-width="330" data-height="230">-->
-                <!-- <span class="icon-add"></span>-->
+              <a href="" class="item-wrap" data-fancybox="gal" data-width="330" data-height="230">
+                <span class="icon-add"></span>
 
-                <!--<img class="img-fluid" src="">-->
+                <img class="img-fluid" src=""> 
               </a>
             </div>
-          </div>
+          </div> -->
 
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="item web">
+            
               <a href="images/psut.jpg" class="item-wrap" data-fancybox="gal" data-width="330" data-height="230">
-               <!-- <span class="icon-add"></span>-->
-
                 <img class="img-fluid img-thumbnail uniImages" src="images/psut.jpg">
 
               </a>
-            </div>
+           
           </div>
 
-          <div class="col-md-6 col-lg-4 mb-4">
+         <!-- <div class="col-md-6 col-lg-4 mb-4">
             <div class="item web">
-             <!-- <a href="" class="item-wrap" data-fancybox="gal" data-width="330" data-height="230">-->
-                <!-- <span class="icon-add"></span>-->
-                <!--<img class="img-fluid" src="">-->
+             <a href="" class="item-wrap" data-fancybox="gal" data-width="330" data-height="230">
+                 <span class="icon-add"></span>
+                <img class="img-fluid" src="">
               </a>
             </div>
-          </div>
+          </div> -->
 
         <!--  <div class="col-md-6 col-lg-4 mb-4" style="display:none">
             <div class="item web">
@@ -372,16 +370,13 @@
                 <h2 class="footer-heading mb-4">Quick Links</h2>
                 <ul class="list-unstyled">
                   <li><a href="index.php">Home</a></li>
-                  <li><a href="#">Terms of Service</a></li>
                   <li><a href="report.php">Report a problem</a></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <h2 class="footer-heading mb-4">Connect</h2>
                 <div class="social_29128 white mb-5">
-                  <a href="#"><span class="icon-facebook"></span></a>
-                  <a href="#"><span class="icon-instagram"></span></a>
-                  <a href="#"><span class="icon-twitter"></span></a>
+                  <a href="https://facebook.com"><span class="icon-facebook"></span></a>
                  </div>
               </div>
 

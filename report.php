@@ -240,16 +240,13 @@ $result="";
                 <h2 class="footer-heading mb-4">Quick Links</h2>
                 <ul class="list-unstyled">
                 <li><a href="index.php">Home</a></li>
-                  <li><a href="#">Terms of Service</a></li>
                   <li><a href="report.php">Report a problem</a></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <h2 class="footer-heading mb-4">Connect</h2>
                 <div class="social_29128 white mb-5">
-                  <a href="#"><span class="icon-facebook"></span></a>
-                  <a href="#"><span class="icon-instagram"></span></a>
-                  <a href="#"><span class="icon-twitter"></span></a>
+                  <a href="https://facebook.com"><span class="icon-facebook"></span></a>
                  </div>
 
               </div>

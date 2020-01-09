@@ -262,7 +262,7 @@ if(isset($_SESSION['userId'])){
                 </table>
                 </form>
                       <div class="row  justify-content-center">
-                        <a id="createAccLink" href="signup.php"/>New to Tangler? Create An Account.</a>
+                        <a id="createAccLink" href="signup.php">New to Tangler? Create An Account.</a>
                       </div>
 
             </div>

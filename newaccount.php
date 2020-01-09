@@ -223,7 +223,7 @@
                     <td>
                     </td>
                     <td>
-                      <p><a id="createAccLink" href="newaccount.php"/>New to Tangler? Create An Account.</a><p>
+                      <p><a id="createAccLink" href="newaccount.php">New to Tangler? Create An Account.</a><p>
                     </td>
                   </tr>
                 </table>
