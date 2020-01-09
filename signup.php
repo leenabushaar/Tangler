@@ -33,7 +33,6 @@ if(isset($_SESSION['userId'])){
       background-color: transparent;
       color:#5f9eadbf;
       border-color: #5f9eadbf;
-      margin-top: 10px;
     }
 
     .btn-primary:hover{
@@ -149,6 +148,11 @@ if(isset($_SESSION['userId'])){
 }
 
 
+  .log-button{
+    border: none;
+    width: auto;
+  }
+
     </style>
 
   </head>
@@ -174,33 +178,29 @@ if(isset($_SESSION['userId'])){
         <div class="container">
           <div class="row align-items-center position-relative">
 
-            <div class="col-5">
+            <div class="col-6">
               <div class="site-logo">
                 <a href="index.php" class="font-weight-bold">Tangler.</a>
               </div>
             </div>
 
-            <div class="col-5" style="padding-right: 25px">
-              <div style="text-align:right">
+            <div  class="col-5">
 
                 <?php
                   if(isset($_SESSION['userId'])){
 
-                    echo '<p style="color:white">Hello, '.$_SESSION['userFname'].' '.$_SESSION['userLname'].'</p>
-                    <form action="includes/logout.inc.php" method="POST">
-                    <button type="submit" name="logout-submit" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="logoutbtn">Log Out</button>
-                    </form>';
-                }
-                else{
-                  echo '<p><a href="login.php" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="loginbtn">Log In</a></p>';
-                }
+                  echo '<form action="includes/logout.inc.php" method="POST"><table cellpadding="10px" style="color:white"><tr><td>Hello, '.$_SESSION['userFname'].' '.$_SESSION['userLname'].'</td><td><button type="submit" name="logout-submit" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="logoutbtn">Log Out</button></td></tr></table></form>';
+                  }
+                    else {
+                      echo '<div style="float:right"><a href="login.php" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="loginbtn">Log In</a></div>';
+                    }
+
                 ?>
 
               </div>
-            </div>
 
-            <div class="col-2  text-right">
 
+            <div class="col-1  text-right">
               <span class="d-inline-block d-lg-block"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
