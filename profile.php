@@ -69,7 +69,7 @@
     }
 
     body{
-      background-color: grey;
+      background-color: black;
     }
 
       .log-button{
@@ -187,10 +187,10 @@
 
     <div class="ftco-blocks-cover-1">
       <div class="site-section-cover overlay" style="background-image: url('images/cover.jpg')">
-        <div class="container">
+        <div class="container  pt-5">
           <div class="row align-items-center justify-content-center" id="form-container">
             <div class="col-md-5">
-              <div class="row justify-content-center your-profile">
+              <div class="row justify-content-center">
 
             <h3 class="text-white">Your Profile</h3>
 
@@ -237,7 +237,7 @@
                     <tr>
                     <td id="studyTitle">Major:</td>
                     <td style="text-align:left" id="studyOptions">
-                      <?php if(isset($_SESSION['userDegree'])) echo $_SESSION['userDegree']." <button name=\"change-major\" class=\"btn btn-primary btn-outline-white py-3 px-5\" onclick=\"handleChange()\">Change Major</button>";
+                      <?php if(isset($_SESSION['userDegree'])) echo $_SESSION['userDegree']." <button name=\"change-major\"  onclick=\"handleChange()\">Change Major</button>";
                       else echo "<select name='p-degree' id='studyOptions' required><option value=\"\" readonly>Please Choose Program</option><optgroup label=\"King Abdullah I School of Graduate Studies and Scientific Research\"><option value=\"mcs\">Computer Science</option><option value=\"mds\">Data Science</option><option value=\"mitsdc\">IT Security and Digital Criminology</option><option value=\"misce\">Intelligent Systems and Computer Engineering</option><option value=\"mee\">Electrical Engineering</option><option value=\"mese\">Enterprise Systems Engineering</option><option value=\"mem\">Engineering Management</option><option value=\"mba\">Business Analytics</option><option value=\"mbe\">Business Entrepreneurship</option></optgroup></select>";
                       ?>
 

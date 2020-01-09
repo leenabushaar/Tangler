@@ -52,7 +52,7 @@
     }
 
     .uniImages{
-    
+
       height:230px;
     }
    .item{
@@ -221,7 +221,7 @@
             <p><a href="#partnerLink" class="btn btn-primary px-5">Partner Universities</a></p>
           </div>
           <div class="col-md-4">
-            <img src="images/about_1.jpg" alt="Image" class="img-fluid">
+            <img src="images/computer science3.png" alt="Image" class="img-fluid">
           </div>
         </div>
       </div>
@@ -294,18 +294,18 @@
               <a href="" class="item-wrap" data-fancybox="gal" data-width="330" data-height="230">
                 <span class="icon-add"></span>
 
-                <img class="img-fluid" src=""> 
+                <img class="img-fluid" src="">
               </a>
             </div>
           </div> -->
 
           <div class="col-md-6 col-lg-4 mb-4">
-            
+
               <a href="images/psut.jpg" class="item-wrap" data-fancybox="gal" data-width="330" data-height="230">
                 <img class="img-fluid img-thumbnail uniImages" src="images/psut.jpg">
 
               </a>
-           
+
           </div>
 
          <!-- <div class="col-md-6 col-lg-4 mb-4">
