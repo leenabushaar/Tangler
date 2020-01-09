@@ -83,6 +83,41 @@ if (isset($_POST['signup-submit'])){
 
             mysqli_stmt_bind_param($stmt, "ssss", $firstName, $lastName, $email, $hashedPwd);
             mysqli_stmt_execute($stmt);
+
+
+
+
+
+
+
+            require 'PHPMailer/PHPMailerAutoload.php';
+
+
+            $name = $_POST['ufname'];
+            $fname=  $_POST['ulname'];
+            $n= $name . " " . $fname;
+           
+           
+            $mail = new PHPMailer();
+            $mail->Host = "ssl://smtp.gmail.com";
+            $mail->Port = 465;
+            $mail->SMTPAuth = true;
+            //$mail->SMTPSecure = 'tls';
+            $mail->isSMTP();
+            $mail->Username = 'tanglerinfor@gmail.com';
+            $mail->Password = 'RamiLeen';
+            $mail->addAddress($email);
+           
+            $mail->isHTML(true);
+           
+            $mail->Subject = 'Welcome to Tangler!';
+            $mail->Body ="<h1>Welcome $name $fname to tangler! <br>Please dont reply to this email.</h1>";
+           
+           
+
+
+
+
             header("Location: ../login.php");
             exit();
 
