@@ -4,6 +4,9 @@
      header("Location: login.php");
      die();
  }
+
+ require 'includes/dbh.inc.php';
+
 ?>
 
 <!doctype html>
@@ -154,21 +157,31 @@
     <div class="site-section">
       <div class="container">
 
-        <div class="topnav">
-          <input type="text" placeholder="Search by name" style="width:25%">
-          <p><a href="#" class="btn btn-primary px-5">Search Users</a></p>
-        </div>
-
         <div class="row align-items-center">
-          <div class="col-md-4">
-            <h2 class="h4 mb-4">Search by Filter</h2>
+          <div class="col-md-5">
+
+          <div class="row">
+            <form action="search.php" method="POST">
+            <h4>Search by Name</h4>
+            <input type="text" name="search" style="width:100%"><br>
+            <button type="submit" class="btn btn-primary px-5" name="submit-search">Search Users</button>
+          </form>
+          </div>
+            <div class="row">
+              <h1></h1>
+            </div>
+          <div class="row">
+            <h4>Search by Filter</h4>
+          </div>
+            <div class="row">
               <p><label style="font-weight:bold">Status</label><br>
               <label><input type="radio" name="status[]" value="undergrad" onchange="handleChange()" checked/> Undergraduate</label><br>
               <label><input type="radio" name="status[]" value="grad" onchange="handleChange()"/> Graduate</label><br>
               <label><input type="radio" name="status[]" value="undergrad-alumnus" onchange="handleChange()"/> Undergraduate Alumnus</label><br>
               <label><input type="radio" name="status[]" value="grad-alumnus" onchange="handleChange()"/> Graduate Alumnus</label>
               </p>
-
+            </div>
+            <div class="row">
               <p><label style="font-weight:bold">Major</label>
               <select name='p-degree' id="studyOptions">
               <option value="" readonly>Select a Major</option>
@@ -192,56 +205,69 @@
               </optgroup>
             </select>
             </p>
+          </div>
+            <div class="row">
             <p><label style="font-weight:bold">Year</label>
             <input style="margin-left:10px" name="p-year" type="number" min="1" max="8" style="width: 50px"/>
             </p>
-            <p><a href="#" class="btn btn-primary px-5">Search Users</a></p>
           </div>
-          <div class="col-md-4">
-            <img src="images/about_1.jpg" alt="Image" class="img-fluid">
+            <div class="row">
+            <p><a href="includes/searchusers.php" class="btn btn-primary px-5">Search Users</a></p>
           </div>
-          <div class="col-md-4">
+          </div>
 
-            <h2 class="h4 mb-4">Our expertise and skills</h2>
+          <div class="col-md-7">
+            <div class="row">
+              <h4>Search Results</h4>
+            </div>
+              <?php
 
-            <div class="progress-wrap mb-4">
-              <div class="d-flex">
-                <span>Writing</span>
-                <span class="ml-auto">55%</span>
-              </div>
-              <div class="progress rounded-0" style="height: 7px;">
-                <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+                $sql="SELECT * FROM users";
+                $result=mysqli_query($conn, $sql);
+                $queryResults=mysqli_num_rows($result);
+
+                if($queryResults>0){
+
+                      while($row=mysqli_fetch_assoc($result)){
+
+                      $status=$row['statusUsers'];
+                      $degree=$row['degreeUsers'];
+                      $year=$row['yearUsers'];
+
+                      $sql="SELECT url FROM profile-pictures WHERE status=$status and degree=$degree and year=$year";
+                      $url=mysqli_query($conn, $sql);
+
+                      if($url!=NULL){
+                      if(($status!=NULL)&&($degree!=NULL)&&($year!=0))
+                      echo "<div class=\"row\"><span><img src=\""+$url+"\" style=\"width:50px; height:50px\" alt=\"\"/></span><span>".$row['fnameUsers']." ".$row['lnameUsers']."</span><br><span>".$status.", ".$degree.", ".$year."</span></div>";
+
+                      elseif(($row['degreeUsers']!=NULL)&&($row['statusUsers']!=NULL)&&($row['yearUsers'])==0)
+                      echo "<div class=\"row\"><span><img src=\""+$url+"\" style=\"width:50px; height:50px\" alt=\"\"/></span><span>".$row['fnameUsers']." ".$row['lnameUsers']."</span><br><span>".$status.", ".$degree."</span></div>";
+                      }
+
+                      else{
+                        if(($status!=NULL)&&($degree!=NULL)&&($year!=0))
+                        echo "<div class=\"row\"><span>".$row['fnameUsers']." ".$row['lnameUsers']."</span><br><span>".$status.", ".$degree.", ".$year."</span></div>";
+
+                        elseif(($row['degreeUsers']!=NULL)&&($row['statusUsers']!=NULL)&&($row['yearUsers'])==0)
+                        echo "<div class=\"row\"><span>".$row['fnameUsers']." ".$row['lnameUsers']."</span><br><span>".$status.", ".$degree."</span></div>";
+                        }
+                      }
+                    }
+
+               ?>
+            <!--  <div class="row">
+              <span class="userPic"><img src="images/accounting1.png" class="img-fluid" style="width: 50px; height: 50px"/></span>
+              <span class="userInfo" style="display: block; margin-left: 10px;">
+                <span class="userName">Leen</span><br>
+                <span class="userStatus">Grad, </span>
+                <span class="userDegree">CS, </span>
+                <span class="userYear">3 </span>
+              </span>
+            </div>
+-->
             </div>
 
-            <div class="progress-wrap mb-4">
-              <div class="d-flex">
-                <span>WordPress</span>
-                <span class="ml-auto">85%</span>
-              </div>
-              <div class="progress rounded-0" style="height: 7px;">
-                <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress-wrap mb-4">
-              <div class="d-flex">
-                <span>Bootstrap</span>
-                <span class="ml-auto">93%</span>
-              </div>
-              <div class="progress rounded-0" style="height: 7px;">
-                <div class="progress-bar" role="progressbar" style="width: 93%;" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress-wrap mb-4">
-              <div class="d-flex">
-                <span>jQuery</span>
-                <span class="ml-auto">83%</span>
-              </div>
-              <div class="progress rounded-0" style="height: 7px;">
-                <div class="progress-bar" role="progressbar" style="width: 83%;" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
             </div>
 
 
@@ -253,18 +279,12 @@
     <div class="site-section">
       <div class="container">
 
-        <div class="row mb-5">
-          <div class="col-md-7 mx-auto text-center">
-            <h2 class="heading-29190">Our Team</h2>
-          </div>
-        </div>
-
         <div class="row">
           <div class="col-lg-4 col-md-6">
 
             <div>
               <div class="person-pic-39219 mb-4">
-                <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                <img src="images/accounting1.png" alt="Image" class="img-fluid">
               </div>
 
               <blockquote class="quote_39823 mb-5">
@@ -274,34 +294,7 @@
               <p class="text-muted">Co-Founder</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
 
-
-            <div>
-              <div class="person-pic-39219 mb-4">
-                <img src="images/person_2.jpg" alt="Image" class="img-fluid">
-              </div>
-              <blockquote class="quote_39823 mb-5">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas excepturi accusantium non aut perspiciatis nisi magni libero, molestias.</p>
-              </blockquote>
-              <p class="mb-0">Jean Smith</p>
-              <p class="text-muted">Co-Founder</p>
-            </div>
-
-          </div>
-          <div class="col-lg-4 col-md-6">
-
-            <div>
-              <div class="person-pic-39219 mb-4">
-                <img src="images/person_3.jpg" alt="Image" class="img-fluid">
-              </div>
-              <blockquote class="quote_39823 mb-5">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas excepturi accusantium non aut perspiciatis nisi magni libero, molestias.</p>
-              </blockquote>
-              <p class="mb-0">Hannah Cooper</p>
-              <p class="text-muted">Co-Founder</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -316,7 +309,7 @@
               </div>
               <div class="text">
                 <span class="d-block">83</span>
-                <span>Happy Clients</span>
+                <span>Search Results</span>
               </div>
             </div>
           </div>
@@ -327,7 +320,7 @@
               </div>
               <div class="text">
                 <span class="d-block">3892</span>
-                <span>Cup of Coffee</span>
+                <span>Similar Status</span>
               </div>
             </div>
           </div>
@@ -338,7 +331,7 @@
               </div>
               <div class="text">
                 <span class="d-block">3,923,892</span>
-                <span>Line of Codes</span>
+                <span>Similar Major</span>
               </div>
             </div>
           </div>
@@ -349,7 +342,7 @@
               </div>
               <div class="text">
                 <span class="d-block">3892</span>
-                <span>Project Finish</span>
+                <span>Similar Year</span>
               </div>
             </div>
           </div>

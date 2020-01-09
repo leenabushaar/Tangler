@@ -4,7 +4,7 @@
 $result="";
  if (isset($_POST['sendemailbutton'])) {
   require 'PHPMailer/PHPMailerAutoload.php';
-  
+
 
  $name = $_POST['Firstntosendemail'];
  $fname=  $_POST['Lastntosendemail'];
@@ -13,31 +13,31 @@ $result="";
  $msg = $_POST['texttosendemail'];
  $n= $name . " " . $fname;
 
- 
+
  $mail = new PHPMailer();
  $mail->Host = "ssl://smtp.gmail.com";
  $mail->Port = 465;
- $mail->SMTPAuth = true;                              
- //$mail->SMTPSecure = 'tls';                           
- $mail->isSMTP();    
- $mail->Username = 'tanglerinfor@gmail.com';               
- $mail->Password = 'RamiLeen';                         
+ $mail->SMTPAuth = true;
+ //$mail->SMTPSecure = 'tls';
+ $mail->isSMTP();
+ $mail->Username = 'tanglerinfor@gmail.com';
+ $mail->Password = 'RamiLeen';
  $mail->SetFrom($from, $n);
- $mail->addAddress('rami.habash99@gmail.com');   
+ $mail->addAddress('rami.habash99@gmail.com');
  $mail->addAddress('leen.abushaar@gmail.com');
  $mail->addReplyTo($from, $n);
 
- $mail->isHTML(true);  
+ $mail->isHTML(true);
 
  $mail->Subject = 'Reporting a problem';
- $mail->Body ="<h1>Name: $n <br>Email from:  $from <br>Message: $msg</h1>"; 
+ $mail->Body ="<h1>Name: $n <br>Email from:  $from <br>Message: $msg</h1>";
 
 
 
   if(!$mail->send()) {
     $result= 'Message could not be sent.';
     $result .= 'Mailer Error: ' . $mail->ErrorInfo;
-  } 
+  }
   else {
     $result= "Thanks $n for contacting us. We'll get back to you soon!";
   }
@@ -97,7 +97,7 @@ $result="";
     }
 
 
-    
+
   .log-button{
     border: none;
     margin-right: 0px;
@@ -134,16 +134,8 @@ $result="";
               </div>
             </div>
 
-            <div class="col-5" style="padding-right: 25px">
-              <div style="text-align:right">
-                
-                <p><a href="login.php" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="loginbtn">Log In</a></p>
 
-
-              </div>
-            </div>
-
-            <div class="col-2  text-right">
+            <div class="col-7  text-right">
 
               <span class="d-inline-block d-lg-block"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
 
@@ -168,8 +160,8 @@ $result="";
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center">
-              <h1 class="mb-4 text-white">Contact Us</h1>
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta veritatis in tenetur doloremque, maiores doloribus officia iste. Dolores.</p>
+              <h1 class="mb-4 text-white">Report A Problem</h1>
+              <p class="mb-4"></p>
             </div>
           </div>
         </div>
@@ -222,10 +214,7 @@ $result="";
               <h3 class="text-black mb-4">Contact Info</h3>
               <ul class="list-unstyled footer-link">
                 <li class="d-block mb-3">
-                  <span class="d-block text-black">Address:</span>
-                  <span>34 Street Name, City Name Here, United States</span></li>
-                <li class="d-block mb-3"><span class="d-block text-black">Phone:</span><span>+1 242 4942 290</span></li>
-                <li class="d-block mb-3"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
+                <li class="d-block mb-3"><span class="d-block text-black">Email:</span><span>tanglerinfor@gmail.com</span></li>
               </ul>
             </div>
           </div>
@@ -235,16 +224,16 @@ $result="";
     </div> <!-- END .site-section -->
 
 
-  
+
 
 
     <footer class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
-            <h2 class="footer-heading mb-3">About Me</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-          </div>
+            <h2 class="footer-heading mb-3">About Us</h2>
+            <p>We are students at Princess Sumaya University for Technology developing a platform that connects students and alumna of our university.<br/><br/>Our vision is to diversify this virtual campus to include universities around Jordan, besides our home university.</p>
+        </div>
           <div class="col-lg-8 ml-auto">
             <div class="row">
               <div class="col-lg-6 ml-auto">
