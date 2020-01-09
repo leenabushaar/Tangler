@@ -66,6 +66,69 @@
 
     </style>
 
+    <script>
+
+    function Filter(){
+
+      var name=document.getElementById("nameSearch").value.toLowerCase();
+      var users=document.getElementsByClassName("usernameresult");
+      var usersdiv=document.getElementsByClassName("userresult");
+
+      var userstatus=document.getElementsByClassName("userstatusresult");
+      var userdegree=document.getElementsByClassName("userdegreeresult");
+
+      var checkedStatus=document.querySelectorAll(":checked")[0].value;
+      var degree=document.querySelectorAll(":checked")[1].value;
+
+
+            for(i=0; i<usersdiv.length; i++){
+              if(((users[i].innerHTML.toLowerCase()==name)||(name==""))&&(userstatus[i].innerHTML==checkedStatus)&&(userdegree[i].innerHTML==degree))
+              usersdiv[i].style.display="block";
+              else usersdiv[i].style.display="none";
+            }
+
+
+
+
+
+
+    }
+
+
+              function handleChange(){
+
+                var checkedStatus=document.querySelectorAll(":checked")[0].value;
+                title=document.getElementById('studyTitle');
+                options=document.getElementById('studyOptions');
+
+
+                if(checkedStatus=="undergrad"){
+                  title.innerHTML="Major:";
+                  options.innerHTML="<select name='p-degree' required><option value=\"\" readonly>Please Choose Major</option><optgroup label=\"King Hussein School of Computing Sciences\"><option value=\"Computer Science\">Computer Science</option><option value=\"Computer Graphics and Animation\">Computer Graphics and Animation</option><option value=\"Software Engineering\">Software Engineering</option></optgroup><optgroup label=\"King Abdullah II School of Engineering\"><option value=\"Electronics Engineering\">Electronics Engineering</option><option value=\"Computer Engineering\">Computer Engineering</option><option value=\"Communications Engineering\">Communications Engineering</option><option value=\"Electrical Power and Energy Engineering\">Electrical Power and Energy Engineering</option><option value=\"Networks and Information Security Engineering\">Networks and Information Security Engineering</option></optgroup><optgroup label=\"King Talal School of Business Technology\"><option value=\"Business Administration\">Business Administration</option><option value=\"Accounting\">Accounting</option><option value=\"E-Marketing and Social Media\">E-Marketing and Social Media</option><option value=\"Business Information Technology\">Business Information Technology</option></optgroup></select>";
+                  document.getElementById('year-row').style.display='block';
+                }
+
+                else if(checkedStatus=="grad"){
+                  title.innerHTML="Program:";
+                  options.innerHTML="<select name='p-degree' required><option value=\"\" readonly>Please Choose Program</option><optgroup label=\"King Abdullah I School of Graduate Studies and Scientific Research\"><option value=\"Computer Science\">Computer Science</option><option value=\"Data Science\">Data Science</option><option value=\"IT Security and Digital Criminology\">IT Security and Digital Criminology</option><option value=\"Intelligent Systems and Computer Engineering\">Intelligent Systems and Computer Engineering</option><option value=\"Electrical Engineering\">Electrical Engineering</option><option value=\"Enterprise Systems Engineering\">Enterprise Systems Engineering</option><option value=\"Engineering Management\">Engineering Management</option><option value=\"Business Analytics\">Business Analytics</option><option value=\"Business Entrepreneurship\">Business Entrepreneurship</option></optgroup></select>";
+                  document.getElementById('year-row').style.display='none';
+                }
+
+                else if(checkedStatus=="undergrad-alumnus"){
+                  title.innerHTML="Degree:";
+                  options.innerHTML="<select name='p-degree' required><option value=\"\" readonly>Please Choose Degree</option><optgroup label=\"King Hussein School of Computing Sciences\"><option value=\"Computer Science B.SC.\">Computer Science B.SC.</option><option value=\"Computer Graphics and Animation B.SC.\">Computer Graphics and Animation B.SC.</option><option value=\"Software Engineering B.SC.\">Software Engineering B.SC.</option></optgroup><optgroup label=\"King Abdullah II School of Engineering\"><option value=\"Electronics Engineering B.SC.\">Electronics Engineering B.SC.</option><option value=\"Computer Engineering B.SC.\">Computer Engineering B.SC.</option><option value=\"Communications Engineering B.SC.\">Communications Engineering B.SC.</option><option value=\"Electrical Power and Energy Engineering B.SC.\">Electrical Power and Energy Engineering B.SC.</option><option value=\"Networks and Information Security Engineering B.SC.\">Networks and Information Security Engineering B.SC.</option></optgroup><optgroup label=\"King Talal School of Business Technology\"><option value=\"Business Administration B.SC.\">Business Administration B.SC.</option><option value=\"Accounting B.SC.\">Accounting B.SC.</option><option value=\"E-Marketing and Social Media B.SC.\">E-Marketing and Social Media B.SC.</option><option value=\"Business Information Technology B.SC.\">Business Information Technology B.SC.</option></optgroup></select>";
+                  document.getElementById('year-row').style.display='none';
+                }
+
+                else if(checkedStatus="grad-alumnus"){
+                  title.innerHTML="Degree:";
+                  options.innerHTML="<select name='p-degree' required><option value=\"\" readonly>Please Choose Degree</option><optgroup label=\"King Abdullah I School of Graduate Studies and Scientific Research\"><option value=\"Computer Science M.SC.\">Computer Science M.SC.</option><option value=\"Data Science M.SC.\">Data Science M.SC.</option><option value=\"IT Security and Digital Criminology M.SC.\">IT Security and Digital Criminology M.SC.</option><option value=\"Intelligent Systems and Computer Engineering M.SC.\">Intelligent Systems and Computer Engineering M.SC.</option><option value=\"Electrical Engineering M.SC.\">Electrical Engineering M.SC.</option><option value=\"Enterprise Systems Engineering M.SC.\">Enterprise Systems Engineering M.SC.</option><option value=\"Engineering Management M.SC.\">Engineering Management M.SC.</option><option value=\"Business Analytics M.SC.\">Business Analytics M.SC.</option><option value=\"Business Entrepreneurship M.SC.\">Business Entrepreneurship M.SC.</option></optgroup></select>";
+                  document.getElementById('year-row').style.display='none';
+                }
+
+              }
+    </script>
+
 
   </head>
 
@@ -159,18 +222,11 @@
           <div class="col-md-5">
 
           <div class="row">
-            <form action="search.php" method="POST">
-            <h4>Search by Name</h4>
-            <input type="text" name="search" style="width:100%"><br>
-            <button type="submit" class="btn btn-primary px-5" name="submit-search">Search Users</button>
-          </form>
-          </div>
-            <div class="row">
-              <h1></h1>
-            </div>
-          <div class="row">
             <h4>Search by Filter</h4>
           </div>
+            <div class="row">
+              <input type="text" id="nameSearch" placeholder="Search by name (optional)" style="width:50%"><br>
+            </div>
             <div class="row">
               <p><label style="font-weight:bold">Status</label><br>
               <label><input type="radio" name="status[]" value="undergrad" onchange="handleChange()" checked/> Undergraduate</label><br>
@@ -180,37 +236,32 @@
               </p>
             </div>
             <div class="row">
-              <p><label style="font-weight:bold">Major</label>
+              <p><label style="font-weight:bold" id="studyTitle">Major</label>
               <select name='p-degree' id="studyOptions">
-              <option value="" readonly>Select a Major</option>
-              <optgroup label="King Hussein School of Computing Sciences">
-                <option value="cs">Computer Science</option>
-                <option value="cg">Computer Graphics and Animation</option>
-                <option value="se">Software Engineering</option>
-              </optgroup>
-              <optgroup label="King Abdullah II School of Engineering">
-                <option value="ee">Electronics Engineering</option>
-                <option value="ce">Computer Engineering</option>
-                <option value="come">Communications Engineering</option>
-                <option value="epee">Electrical Power and Energy Engineering</option>
-                <option value="nise">Networks and Information Security Engineering</option>
-              </optgroup>
-              <optgroup label="King Talal School of Business Technology">
-                <option value="ba">Business Administration</option>
-                <option value="acc">Accounting</option>
-                <option value="em">E-Marketing and Social Media</option>
-                <option value="bit">Business Information Technology</option>
-              </optgroup>
+                <option value="" readonly>Please Choose Major</option>
+                <optgroup label="King Hussein School of Computing Sciences">
+                  <option value="Computer Science">Computer Science</option>
+                  <option value="Computer Graphics and Animation">Computer Graphics and Animation</option>
+                  <option value="Software Engineering">Software Engineering</option>
+                </optgroup>
+                <optgroup label="King Abdullah II School of Engineering">
+                  <option value="Electronics Engineering">Electronics Engineering</option>
+                  <option value="Computer Engineering">Computer Engineering</option>
+                  <option value="Communications Engineering">Communications Engineering</option>
+                  <option value="Electrical Power and Energy Engineering">Electrical Power and Energy Engineering</option>
+                  <option value="Networks and Information Security Engineering">Networks and Information Security Engineering</option>
+                </optgroup>
+                <optgroup label="King Talal School of Business Technology">
+                  <option value="Business Administration">Business Administration</option>
+                  <option value="Accounting">Accounting</option>
+                  <option value="E-Marketing">E-Marketing and Social Media</option>
+                  <option value="Business Information Technology">Business Information Technology</option>
+                </optgroup>
             </select>
             </p>
           </div>
             <div class="row">
-            <p><label style="font-weight:bold">Year</label>
-            <input style="margin-left:10px" name="p-year" type="number" min="1" max="8" style="width: 50px"/>
-            </p>
-          </div>
-            <div class="row">
-            <p><a href="includes/searchusers.php" class="btn btn-primary px-5">Search Users</a></p>
+            <p><button class="btn btn-primary px-5" onclick="Filter()">Search Users</button></p>
           </div>
           </div>
 
@@ -232,24 +283,12 @@
                       $degree=$row['degreeUsers'];
                       $year=$row['yearUsers'];
 
-                      $sql="SELECT url FROM profile-pictures WHERE status=$status and degree=$degree and year=$year";
-                      $url=mysqli_query($conn, $sql);
-
-                      if($url!=NULL){
-                      if(($status!=NULL)&&($degree!=NULL)&&($year!=0))
-                      echo "<div class=\"row\"><span><img src=\""+$url+"\" style=\"width:50px; height:50px\" alt=\"\"/></span><span>".$row['fnameUsers']." ".$row['lnameUsers']."</span><br><span>".$status.", ".$degree.", ".$year."</span></div>";
-
-                      elseif(($row['degreeUsers']!=NULL)&&($row['statusUsers']!=NULL)&&($row['yearUsers'])==0)
-                      echo "<div class=\"row\"><span><img src=\""+$url+"\" style=\"width:50px; height:50px\" alt=\"\"/></span><span>".$row['fnameUsers']." ".$row['lnameUsers']."</span><br><span>".$status.", ".$degree."</span></div>";
-                      }
-
-                      else{
                         if(($status!=NULL)&&($degree!=NULL)&&($year!=0))
-                        echo "<div class=\"row\"><span>".$row['fnameUsers']." ".$row['lnameUsers']."</span><br><span>".$status.", ".$degree.", ".$year."</span></div>";
+                        echo "<div style='display:none;' class=\"row userresult\"><div class='col-3 usernameresult'>".$row['fnameUsers']." ".$row['lnameUsers']."</div><br><div class='col-9'><span class='userstatusresult'>".$status."</span><span>, </span><span class='userdegreeresult'>".$degree."</span><span>, </span><span class='yearresult'>".$year."</span></div></div>";
 
                         elseif(($row['degreeUsers']!=NULL)&&($row['statusUsers']!=NULL)&&($row['yearUsers'])==0)
-                        echo "<div class=\"row\"><span>".$row['fnameUsers']." ".$row['lnameUsers']."</span><br><span>".$status.", ".$degree."</span></div>";
-                        }
+                        echo "<div style='display:none;' class=\"row userresult\"><div class='col-3 usernameresult'>".$row['fnameUsers']." ".$row['lnameUsers']."</div><br><div class='col-9'><span class='userstatusresult'>".$status."</span><span>, </span><span class='userdegreeresult'>".$degree."</span></div></div>";
+
                       }
                     }
 
@@ -274,145 +313,7 @@
       </div>
     </div>
 
-    <div class="site-section">
-      <div class="container">
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-
-            <div>
-              <div class="person-pic-39219 mb-4">
-                <img src="images/accounting1.png" alt="Image" class="img-fluid">
-              </div>
-
-              <blockquote class="quote_39823 mb-5">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas excepturi accusantium non aut perspiciatis nisi magni libero, molestias.</p>
-              </blockquote>
-              <p class="mb-0">Chris Smith</p>
-              <p class="text-muted">Co-Founder</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="site-section bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div class="fact-39281 d-flex align-items-center">
-              <div class="wrap-icon mr-3">
-                <span class="icon-smile-o"></span>
-              </div>
-              <div class="text">
-                <span class="d-block">83</span>
-                <span>Search Results</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div class="fact-39281 d-flex align-items-center">
-              <div class="wrap-icon mr-3">
-                <span class="icon-coffee"></span>
-              </div>
-              <div class="text">
-                <span class="d-block">3892</span>
-                <span>Similar Status</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div class="fact-39281 d-flex align-items-center">
-              <div class="wrap-icon mr-3">
-                <span class="icon-code"></span>
-              </div>
-              <div class="text">
-                <span class="d-block">3,923,892</span>
-                <span>Similar Major</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div class="fact-39281 d-flex align-items-center">
-              <div class="wrap-icon mr-3">
-                <span class="icon-desktop_mac"></span>
-              </div>
-              <div class="text">
-                <span class="d-block">3892</span>
-                <span>Similar Year</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--<div class="site-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-7 mx-auto text-center">
-            <h2 class="heading-29190">See Our Studio</h2>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-
-            <a href="https://vimeo.com/191947042" data-fancybox  class="btn-video_38929">
-              <span><span class="icon-play"></span></span>
-              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3">
-            <h2 class="footer-heading mb-3">About Me</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-          </div>
-          <div class="col-lg-8 ml-auto">
-            <div class="row">
-              <div class="col-lg-6 ml-auto">
-                <h2 class="footer-heading mb-4">Quick Links</h2>
-                <ul class="list-unstyled">
-                <li><a href="index.php">Home</a></li>
-                  <li><a href="#">Terms of Service</a></li>
-                  <li><a href="report.php">Report a problem</a></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <h2 class="footer-heading mb-4">Connect</h2>
-                <div class="social_29128 white mb-5">
-                  <a href="#"><span class="icon-facebook"></span></a>
-                  <a href="#"><span class="icon-instagram"></span></a>
-                  <a href="#"><span class="icon-twitter"></span></a>
-                 </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-5">
-              <p>
-          -->  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            <!--Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-        -->    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        <!--    </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </footer>
--->
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
