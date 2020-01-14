@@ -141,6 +141,14 @@
                       echo '<div style="float:right"><a href="login.php" class="btn btn-primary btn-outline-white py-3 px-5 log-button" id="loginbtn">Log In</a></div>';
                     }
 
+
+                      if(isset($_GET['signup'])){
+
+                          echo '<p style="text-align: left; font-weight: bold; color: #4e927c" class="signuperror">Signed up sucessfully. Welcome to Tangler!</p>';
+
+                      }
+
+
                 ?>
 
               </div>
